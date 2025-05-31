@@ -1,0 +1,854 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>time-bee-front documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">time-bee-front documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content interface">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Interfaces</li>
+  <li class="breadcrumb-item"
+  >
+  PermisosHumanizeDto</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/empresa/dashboard-permisos/dashboard-permisos.component.ts</code>
+        </p>
+
+
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Interfaz para representar permisos con datos enriquecidos.</p>
+
+            </p>
+
+
+        <section data-compodoc="block-index">
+            <h3 id="index">Index</h3>
+            <table class="table table-sm table-bordered index-table">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Properties</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                            <span class="modifier">Optional</span>
+                                        <a href="#estado" 
+>
+                                            estado
+                                        </a>
+                                </li>
+                                <li>
+                                            <span class="modifier">Optional</span>
+                                        <a href="#fecha" 
+>
+                                            fecha
+                                        </a>
+                                </li>
+                                <li>
+                                            <span class="modifier">Optional</span>
+                                        <a href="#hora" 
+>
+                                            hora
+                                        </a>
+                                </li>
+                                <li>
+                                            <span class="modifier">Optional</span>
+                                        <a href="#id" 
+>
+                                            id
+                                        </a>
+                                </li>
+                                <li>
+                                            <span class="modifier">Optional</span>
+                                        <a href="#permiso" 
+>
+                                            permiso
+                                        </a>
+                                </li>
+                                <li>
+                                            <span class="modifier">Optional</span>
+                                        <a href="#trabajador" 
+>
+                                            trabajador
+                                        </a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+
+
+            <section data-compodoc="block-properties">
+                <h3 id="inputs">Properties</h3>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="estado"></a>
+                                        <span class="name "><b>estado</b>
+                                            <a href="#estado">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>estado:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Optional</i>
+                                        </td>
+                                    </tr>
+
+
+
+
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Estado del permiso.</p>
+</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="fecha"></a>
+                                        <span class="name "><b>fecha</b>
+                                            <a href="#fecha">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>fecha:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Optional</i>
+                                        </td>
+                                    </tr>
+
+
+
+
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Fecha del permiso.</p>
+</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="hora"></a>
+                                        <span class="name "><b>hora</b>
+                                            <a href="#hora">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>hora:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Optional</i>
+                                        </td>
+                                    </tr>
+
+
+
+
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Hora del permiso.</p>
+</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="id"></a>
+                                        <span class="name "><b>id</b>
+                                            <a href="#id">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>id:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Optional</i>
+                                        </td>
+                                    </tr>
+
+
+
+
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Identificador del permiso.</p>
+</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="permiso"></a>
+                                        <span class="name "><b>permiso</b>
+                                            <a href="#permiso">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>permiso:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Optional</i>
+                                        </td>
+                                    </tr>
+
+
+
+
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Tipo de permiso.</p>
+</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="trabajador"></a>
+                                        <span class="name "><b>trabajador</b>
+                                            <a href="#trabajador">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>trabajador:     <code>TrabajadorDto</code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>    <code>TrabajadorDto</code>
+
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Optional</i>
+                                        </td>
+                                    </tr>
+
+
+
+
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Datos del trabajador.</p>
+</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+            </section>
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Component, OnInit} from &#x27;@angular/core&#x27;;
+import {NgClass, NgForOf, NgIf} from &quot;@angular/common&quot;;
+import {PermisosService, TrabajadorDto} from &quot;../../../openapi&quot;;
+import {FormlyFieldConfig, FormlyModule} from &quot;@ngx-formly/core&quot;;
+import {FormGroup, ReactiveFormsModule} from &quot;@angular/forms&quot;;
+import {debounceTime, distinctUntilChanged} from &quot;rxjs&quot;;
+import {FormlyBootstrapModule} from &quot;@ngx-formly/bootstrap&quot;;
+import {MatSnackBar} from &quot;@angular/material/snack-bar&quot;;
+import {formatDate, formatHours, humanizeEnum} from &quot;../../core/library/library&quot;;
+
+/**
+ * Componente para gestionar el dashboard de permisos.
+ */
+@Component({
+  selector: &#x27;app-dashboard-permisos&#x27;,
+  standalone: true,
+  templateUrl: &#x27;./dashboard-permisos.component.html&#x27;,
+  imports: [
+    NgIf,
+    NgClass,
+    NgForOf,
+    FormlyModule,
+    ReactiveFormsModule,
+    FormlyBootstrapModule
+  ],
+  styleUrl: &#x27;./dashboard-permisos.component.scss&#x27;
+})
+export class DashboardPermisosComponent implements OnInit {
+
+  /**
+   * Constructor del componente.
+   * @param permisosService Servicio para gestionar permisos.
+   * @param snackBar Servicio para mostrar notificaciones.
+   */
+  constructor(private permisosService: PermisosService, private snackBar: MatSnackBar) {
+  }
+
+  /**
+   * Indica si se muestran los permisos pendientes.
+   */
+  verPendientes:boolean &#x3D; true;
+
+  /**
+   * Alterna entre la vista de permisos pendientes y resueltos.
+   */
+  alternarVista() {
+    this.verPendientes &#x3D; !this.verPendientes;
+    this.filterModel &#x3D; {};
+    this.permisosSolicitadosFiltrados &#x3D; [...this.permisosSolicitados];
+    this.permisosResueltosFiltrados &#x3D; [...this.permisosResueltos];
+  }
+
+  /**
+   * Lista de permisos solicitados.
+   */
+  permisosSolicitados: PermisosHumanizeDto[] &#x3D; [];
+
+  /**
+   * Lista de permisos ya resueltos (aprobados/rechazados).
+   */
+  permisosResueltos: PermisosHumanizeDto[] &#x3D; [];
+
+  /**
+   * Método de inicialización del componente.
+   */
+  ngOnInit(): void {
+    this.cargarPermisos();
+  }
+
+  /**
+   * Aprueba un permiso específico.
+   * @param permiso Permiso a aprobar.
+   */
+  aprobarPermiso(permiso: PermisosHumanizeDto) {
+    this.permisosService.validar({id:permiso.id!,estado:&#x27;APROBADO&#x27;}).subscribe({
+      next: data &#x3D;&gt; {
+        this.cargarPermisos();
+        this.snackbarok(&#x27;Permiso aprobado&#x27;);
+      },
+      error: err &#x3D;&gt; {
+        this.snackbarnok(&#x27;Hubo un error al aprobar el permiso&#x27;);
+      }
+    })
+  }
+
+  /**
+   * Rechaza un permiso específico.
+   * @param permiso Permiso a rechazar.
+   */
+  rechazarPermiso(permiso: PermisosHumanizeDto) {
+    this.permisosService.validar({id:permiso.id!,estado:&#x27;RECHAZADO&#x27;}).subscribe({
+      next: data &#x3D;&gt; {
+        this.cargarPermisos();
+        this.snackbarok(&#x27;Permiso rechazado&#x27;);
+      },
+      error: err &#x3D;&gt; {
+        this.snackbarnok(&#x27;Hubo un error al rechazar el permiso&#x27;);
+      }
+    })
+  }
+
+  /**
+   * Carga todos los permisos desde el backend.
+   */
+  private cargarPermisos() {
+    this.permisosService.permisosPorEmpresaId().subscribe({
+      next: data &#x3D;&gt; {
+        const permisos &#x3D; data.data ?? [];
+
+        this.permisosSolicitados &#x3D; permisos
+            .filter(p &#x3D;&gt; p.estado &#x3D;&#x3D;&#x3D; &#x27;SOLICITADO&#x27;)
+            .sort((a, b) &#x3D;&gt; new Date(a.fecha!).getTime() - new Date(b.fecha!).getTime())
+
+        this.permisosSolicitadosFiltrados &#x3D; [...this.permisosSolicitados];
+
+        this.permisosResueltos &#x3D; permisos
+            .filter(p &#x3D;&gt; p.estado &#x3D;&#x3D;&#x3D; &#x27;APROBADO&#x27; || p.estado &#x3D;&#x3D;&#x3D; &#x27;RECHAZADO&#x27;)
+            .sort((a, b) &#x3D;&gt; new Date(b.fecha!).getTime() - new Date(a.fecha!).getTime())
+
+        this.permisosResueltosFiltrados &#x3D; [...this.permisosResueltos];
+      },
+      error: err &#x3D;&gt; {
+        this.snackbarnok(&#x27;Hubo un error al cargar los permisos&#x27;);
+      }
+    });
+  }
+
+  /**
+   * Formulario para búsqueda de permisos.
+   */
+  filterForm &#x3D; new FormGroup({});
+
+  /**
+   * Modelo para búsqueda de permisos.
+   */
+  filterModel: any &#x3D; {};
+
+  /**
+   * Campos del formulario de búsqueda.
+   */
+  filterFields: FormlyFieldConfig[] &#x3D; [
+    {
+      key: &#x27;querypermisos&#x27;,
+      type: &#x27;input&#x27;,
+      props: {
+        type:&#x27;text&#x27;,
+        placeholder: &#x27;Buscar permisos...&#x27;,
+        attributes:{
+          class:&#x27;form-control form-control-sm w-100&#x27;,
+        }
+      },
+      hooks: {
+        onInit: (field) &#x3D;&gt; {
+          field.formControl!.valueChanges
+              .pipe(
+                  debounceTime(200),
+                  distinctUntilChanged(),
+              )
+              .subscribe(value &#x3D;&gt; {
+                this.filtrarPermisos();
+              });
+        },
+      },
+    }
+  ];
+
+  /**
+   * Lista filtrada de permisos resueltos.
+   */
+  permisosResueltosFiltrados: PermisosHumanizeDto[] &#x3D; [];
+
+  /**
+   * Lista filtrada de permisos solicitados.
+   */
+  permisosSolicitadosFiltrados: PermisosHumanizeDto[] &#x3D; [];
+
+  /**
+   * Filtra los permisos según el texto de búsqueda.
+   */
+  filtrarPermisos() {
+    const query &#x3D; (this.filterModel.querypermisos ?? &#x27;&#x27;).toString().toLowerCase().trim();
+    if (!query) {
+      this.permisosResueltosFiltrados &#x3D; [...this.permisosResueltos];
+      this.permisosSolicitadosFiltrados &#x3D; [...this.permisosSolicitados]
+      return;
+    }
+
+    if (this.verPendientes) {
+      this.permisosSolicitadosFiltrados &#x3D; this.permisosSolicitados.filter(p &#x3D;&gt; {
+        const campos &#x3D; [
+          p.permiso,
+          p.estado,
+          p.fecha,
+          p.hora,
+          p.trabajador?.nombre,
+          p.trabajador?.apellidos,
+          p.trabajador?.dni,
+          p.trabajador?.email,
+          p.trabajador?.categoria
+        ].filter(v &#x3D;&gt; v !&#x3D; null) as any[];
+
+        return campos.some(c &#x3D;&gt; c.toString().toLowerCase().includes(query));
+      });
+    } else {
+      this.permisosResueltosFiltrados &#x3D; this.permisosResueltos.filter(p &#x3D;&gt; {
+        const campos &#x3D; [
+          p.permiso,
+          p.estado,
+          p.fecha,
+          p.hora,
+          p.trabajador?.nombre,
+          p.trabajador?.apellidos,
+          p.trabajador?.dni,
+          p.trabajador?.email,
+          p.trabajador?.categoria
+        ].filter(v &#x3D;&gt; v !&#x3D; null) as any[];
+
+        return campos.some(c &#x3D;&gt; c.toString().toLowerCase().includes(query));
+      });
+    }
+  }
+
+  /**
+   * Muestra un snackbar de éxito.
+   * @param mensaje Mensaje a mostrar.
+   */
+  snackbarok(mensaje:string){
+    this.snackBar.open(
+        mensaje,
+        &#x27;&#x27;,
+        {
+          duration: 3000,
+          horizontalPosition: &#x27;right&#x27;,
+          verticalPosition: &#x27;bottom&#x27;,
+          panelClass: [&#x27;snackbar-success&#x27;],
+        }
+    );
+  }
+
+  /**
+   * Muestra un snackbar de error.
+   * @param mensaje Mensaje a mostrar.
+   */
+  snackbarnok(mensaje:string){
+    this.snackBar.open(
+        mensaje,
+        &#x27;&#x27;,
+        {
+          duration: 3000,
+          horizontalPosition: &#x27;right&#x27;,
+          verticalPosition: &#x27;bottom&#x27;,
+          panelClass: [&#x27;snackbar-error&#x27;],
+        }
+    );
+  }
+
+  /**
+   * Referencia al helper humanizeEnum.
+   */
+  protected readonly humanizeEnum &#x3D; humanizeEnum;
+
+  /**
+   * Referencia al helper formatDate.
+   */
+  protected readonly formatDate &#x3D; formatDate;
+
+  /**
+   * Referencia al helper formatHours.
+   */
+  protected readonly formatHours &#x3D; formatHours;
+}
+
+/**
+ * Interfaz para representar permisos con datos enriquecidos.
+ */
+export interface PermisosHumanizeDto {
+  /**
+   * Identificador del permiso.
+   */
+  id?: number
+  /**
+   * Tipo de permiso.
+   */
+  permiso?: string
+  /**
+   * Datos del trabajador.
+   */
+  trabajador?: TrabajadorDto
+  /**
+   * Fecha del permiso.
+   */
+  fecha?: string
+  /**
+   * Hora del permiso.
+   */
+  hora?: number
+  /**
+   * Estado del permiso.
+   */
+  estado?: string
+}
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
+            var COMPODOC_CURRENT_PAGE_URL = 'PermisosHumanizeDto.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

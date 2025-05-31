@@ -1,0 +1,59 @@
+<div class="card shadow-sm h-100 d-flex flex-column bg-gris text-blanco">
+    <div class="card-header m-0 py-0 d-flex align-items-center">
+
+        <h5 class="m-0 flex-grow-1">Mis Permisos</h5>
+        <formly-form class="d-flex align-items-center m-0" [form]="filterForm" [fields]="filterFields" [model]="filterModel"></formly-form>
+
+        <button class="btn btn-sm btn-azul-claro m-0 ms-2" (click)="abrirModalNuevo()" >
+            <i class="bi bi-plus-lg"></i> Nueva solicitud
+        </button>
+    </div>
+
+    <!-- tabla -->
+    <div class="table-responsive tabla-scroll-wrapper" style="height: 50vh">
+        <table class="table table-sm mb-0 table-glass">
+            <thead class="sticky-top">
+            <tr class="text-center">
+                <th>Tipo</th>
+                <th>Fecha</th>
+                <th>Horas</th>
+                <th>Estado</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let p of permisos" class="text-center align-middle">
+                <td >{{ humanizeEnum(p.permiso!) }}</td>
+                <td >{{ formatDate(p.fecha!) }}</td>
+                <td >{{ formatHours(p.hora!)}}</td>
+                <td >{{ humanizeEnum(p.estado!) }}</td>
+                <td >
+                    <ng-container *ngIf="p.estado==='SOLICITADO' else gestionado" >
+                        <button class="btn btn-sm btn-warning me-1" (click)="openModalEditar(p)">
+                            <i class="bi bi-pencil"></i>
+                        </button>
+                        <button class="btn btn-sm btn-danger" (click)="delete(p.id!)">
+                            <i class="bi bi-trash"></i>
+                        </button>
+                    </ng-container>
+                    <ng-template #gestionado>
+                        <button class="btn btn-sm invisible" >
+                            <i class="bi bi-trash"></i>
+                        </button>
+                    </ng-template>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<app-modal #modalEditar [title]="'Editar Permiso'">
+    <formly-form [form]="editarForm" [fields]="editarFields" [model]="editarModel"></formly-form>
+    <button modal-footer class="btn btn-secondary" (click)="editarPermiso()" [disabled]="!editarForm.valid">Guardar</button>
+</app-modal>
+
+<app-modal #modalNuevo [title]="'Solicitar Permiso'">
+    <formly-form [form]="nuevoForm" [fields]="nuevoFields" [model]="nuevoModel"></formly-form>
+    <button modal-footer class="btn btn-secondary" (click)="nuevoPermiso()" [disabled]="!nuevoForm.valid">Solicitar</button>
+</app-modal>

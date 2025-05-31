@@ -1,0 +1,56 @@
+<div class="d-flex justify-content-between mt-1">
+    <h5 class="text-white">Fichajes</h5>
+    <div class="w-25">
+        <formly-form [form]="filterForm" [fields]="filterFields" [model]="filterModel"></formly-form>
+    </div>
+    <div>
+        <button (click)="abrirModalNuevo()" class="btn btn-sm btn-azul-claro d-flex align-items-center gap-1">
+            <i class="bi bi-plus-lg" ></i> Crear fichaje
+        </button>
+    </div>
+</div>
+
+<div *ngIf="fichajes.length; else sinFichajes" class="table-responsive tabla-scroll-wrapper" style="height: 50vh">
+        <table class="table table-sm table-hover mb-0 table-glass">
+            <thead class="sticky-top">
+            <tr class="text-center">
+                <th>Nombre</th>
+                <th>Inicio</th>
+                <th>Fin</th>
+                <th>Tiempo trabajado</th>
+                <th>Acciones</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr class="text-center align-middle" *ngFor="let fichaje of fichajes">
+                    <td>{{ fichaje.trabajador?.nombre + ' ' + fichaje.trabajador?.apellidos }}</td>
+                    <td>{{ fichaje.inicioFmt }}</td>
+                    <td>{{ fichaje.finFmt }}</td>
+                    <td>{{ fichaje.tiempoTrabajado }}</td>
+                    <td class="d-flex justify-content-evenly">
+                        <button (click)="abrirModalEditar(fichaje)" class="btn btn-sm btn-warning"><i class="bi bi-pencil"></i></button>
+                        <button (click)="abrirModalEliminar(fichaje)" class="btn btn-sm btn-danger"><i class="bi bi-x-lg"></i></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</div>
+<ng-template #sinFichajes>
+    <p class="text-center my-3 text-white">¡No hay fichajes para mostrar!</p>
+</ng-template>
+
+<app-modal #modalEliminar>
+    <p class="text-center mt-3 text-white">¿Seguro que quieres eliminar el fichaje?</p>
+    <formly-form [form]="eliminarForm" [fields]="eliminarFields" [model]="eliminarModel"></formly-form>
+    <button modal-footer class="btn btn-secondary" (click)="eliminarFichaje()">Eliminar</button>
+</app-modal>
+
+<app-modal #modalEditar>
+    <formly-form [form]="editarForm" [fields]="editarFields" [model]="editarModel"></formly-form>
+    <button modal-footer class="btn btn-secondary" (click)="editarFichaje()" [disabled]="!editarForm.valid">Guardar</button>
+</app-modal>
+
+<app-modal #modalNuevo>
+    <formly-form [form]="nuevoForm" [fields]="nuevoFields" [model]="nuevoModel"></formly-form>
+    <button modal-footer class="btn btn-secondary" (click)="nuevoFichaje()" [disabled]="!nuevoForm.valid">Guardar</button>
+</app-modal>

@@ -1,0 +1,2333 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>time-bee-front documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">time-bee-front documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  DashboardPermisosTrabajadorComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/trabajador/dashboard-permisos-trabajador/dashboard-permisos-trabajador.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-dashboard-permisos-trabajador</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">standalone</td>
+                <td class="col-md-9"><code>true</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                            <code>NgIf</code>
+                            <code>NgForOf</code>
+                            <code>FormlyModule</code>
+                            <code>ReactiveFormsModule</code>
+                            <code>FormlyBootstrapModule</code>
+                            <code>MatDatepickerModule</code>
+                            <code>MatFormFieldModule</code>
+                            <code>MatInputModule</code>
+                            <code>MatButtonModule</code>
+                                <code><a href="../components/ModalComponent.html" target="_self" >ModalComponent</a></code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./dashboard-permisos-trabajador.component.html</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrl</td>
+                <td class="col-md-9"><code>./dashboard-permisos-trabajador.component.scss</code></td>
+            </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#allPermisos" >allPermisos</a>
+                            </li>
+                            <li>
+                                <a href="#editarFields" >editarFields</a>
+                            </li>
+                            <li>
+                                <a href="#editarForm" >editarForm</a>
+                            </li>
+                            <li>
+                                <a href="#editarModel" >editarModel</a>
+                            </li>
+                            <li>
+                                <a href="#filterFields" >filterFields</a>
+                            </li>
+                            <li>
+                                <a href="#filterForm" >filterForm</a>
+                            </li>
+                            <li>
+                                <a href="#filterModel" >filterModel</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#formatDate" >formatDate</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#formatHours" >formatHours</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#humanizeEnum" >humanizeEnum</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                <a href="#modalEditar" >modalEditar</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                <a href="#modalNuevo" >modalNuevo</a>
+                            </li>
+                            <li>
+                                <a href="#nuevoFields" >nuevoFields</a>
+                            </li>
+                            <li>
+                                <a href="#nuevoForm" >nuevoForm</a>
+                            </li>
+                            <li>
+                                <a href="#nuevoModel" >nuevoModel</a>
+                            </li>
+                            <li>
+                                <a href="#permisos" >permisos</a>
+                            </li>
+                            <li>
+                                <a href="#tipos" >tipos</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#abrirModalNuevo" >abrirModalNuevo</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#applyFilter" >applyFilter</a>
+                            </li>
+                            <li>
+                                <a href="#delete" >delete</a>
+                            </li>
+                            <li>
+                                <a href="#editarPermiso" >editarPermiso</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#loadPermisos" >loadPermisos</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#nuevoPermiso" >nuevoPermiso</a>
+                            </li>
+                            <li>
+                                <a href="#openModalEditar" >openModalEditar</a>
+                            </li>
+                            <li>
+                                <a href="#snackbarnok" >snackbarnok</a>
+                            </li>
+                            <li>
+                                <a href="#snackbarok" >snackbarok</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(permisosService: <a href="../injectables/PermisosService.html" target="_self">PermisosService</a>, snackBar: MatSnackBar)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="100" class="link-to-prism">src/app/trabajador/dashboard-permisos-trabajador/dashboard-permisos-trabajador.component.ts:100</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Constructor del componente que inyecta servicios.</p>
+</div>
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>permisosService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/PermisosService.html" target="_self" >PermisosService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Servicio para permisos.</p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>snackBar</td>
+                                                  
+                                                        <td>
+                                                                    <code>MatSnackBar</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Servicio para mensajes snackbar.</p>
+
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="abrirModalNuevo"></a>
+                    <span class="name">
+                        <span ><b>abrirModalNuevo</b></span>
+                        <a href="#abrirModalNuevo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>abrirModalNuevo()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="361"
+                                    class="link-to-prism">src/app/trabajador/dashboard-permisos-trabajador/dashboard-permisos-trabajador.component.ts:361</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Abre el modal para solicitar un nuevo permiso.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="applyFilter"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>applyFilter</b></span>
+                        <a href="#applyFilter"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>applyFilter()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="149"
+                                    class="link-to-prism">src/app/trabajador/dashboard-permisos-trabajador/dashboard-permisos-trabajador.component.ts:149</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Aplica el filtro sobre los permisos según la búsqueda.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="delete"></a>
+                    <span class="name">
+                        <span ><b>delete</b></span>
+                        <a href="#delete"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>delete(permisoId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="387"
+                                    class="link-to-prism">src/app/trabajador/dashboard-permisos-trabajador/dashboard-permisos-trabajador.component.ts:387</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Elimina un permiso dado su ID.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>permisoId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>ID del permiso.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="editarPermiso"></a>
+                    <span class="name">
+                        <span ><b>editarPermiso</b></span>
+                        <a href="#editarPermiso"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>editarPermiso()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="260"
+                                    class="link-to-prism">src/app/trabajador/dashboard-permisos-trabajador/dashboard-permisos-trabajador.component.ts:260</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Guarda los cambios del permiso editado.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadPermisos"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>loadPermisos</b></span>
+                        <a href="#loadPermisos"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>loadPermisos()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="128"
+                                    class="link-to-prism">src/app/trabajador/dashboard-permisos-trabajador/dashboard-permisos-trabajador.component.ts:128</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Carga todos los permisos del trabajador y los ordena.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="114"
+                                    class="link-to-prism">src/app/trabajador/dashboard-permisos-trabajador/dashboard-permisos-trabajador.component.ts:114</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Hook de inicialización.
+Carga tipos de permiso y permisos actuales.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="nuevoPermiso"></a>
+                    <span class="name">
+                        <span ><b>nuevoPermiso</b></span>
+                        <a href="#nuevoPermiso"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>nuevoPermiso()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="369"
+                                    class="link-to-prism">src/app/trabajador/dashboard-permisos-trabajador/dashboard-permisos-trabajador.component.ts:369</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Envía la solicitud de nuevo permiso.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="openModalEditar"></a>
+                    <span class="name">
+                        <span ><b>openModalEditar</b></span>
+                        <a href="#openModalEditar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>openModalEditar(p: PermisosDto)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="251"
+                                    class="link-to-prism">src/app/trabajador/dashboard-permisos-trabajador/dashboard-permisos-trabajador.component.ts:251</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Abre el modal de edición para un permiso.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>p</td>
+                                            <td>
+                                                        <code>PermisosDto</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Permiso a editar.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="snackbarnok"></a>
+                    <span class="name">
+                        <span ><b>snackbarnok</b></span>
+                        <a href="#snackbarnok"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>snackbarnok(mensaje: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="420"
+                                    class="link-to-prism">src/app/trabajador/dashboard-permisos-trabajador/dashboard-permisos-trabajador.component.ts:420</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Muestra un mensaje snackbar de error.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>mensaje</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Mensaje a mostrar.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="snackbarok"></a>
+                    <span class="name">
+                        <span ><b>snackbarok</b></span>
+                        <a href="#snackbarok"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>snackbarok(mensaje: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="403"
+                                    class="link-to-prism">src/app/trabajador/dashboard-permisos-trabajador/dashboard-permisos-trabajador.component.ts:403</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Muestra un mensaje snackbar de éxito.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>mensaje</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Mensaje a mostrar.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="allPermisos"></a>
+                    <span class="name">
+                        <span ><b>allPermisos</b></span>
+                        <a href="#allPermisos"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>PermisosDto[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="61" class="link-to-prism">src/app/trabajador/dashboard-permisos-trabajador/dashboard-permisos-trabajador.component.ts:61</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Lista completa de permisos, sin filtros.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="editarFields"></a>
+                    <span class="name">
+                        <span ><b>editarFields</b></span>
+                        <a href="#editarFields"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>FormlyFieldConfig[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+    {
+      key: &#x27;permiso&#x27;,
+      type: &#x27;select&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        label: &#x27;Tipo de permiso&#x27;,
+        required: true,
+        hideRequiredMarker: true,
+        options: []
+      },
+      hooks:{
+        onInit: field &#x3D;&gt; {
+          this.permisosService.listarTiposPermiso().subscribe({
+            next: response &#x3D;&gt; {
+              field.props!.options &#x3D; response.data!.map(item &#x3D;&gt; ({
+                label: humanizeEnum(item.nombre!),
+                value: item.codigo,
+              }));
+            }
+          })
+        }
+      }
+    },
+    {
+      key: &#x27;fecha&#x27;,
+      type: &#x27;input&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        type:&#x27;date&#x27;,
+        label: &#x27;Fecha&#x27;,
+        required: true,
+        hideRequiredMarker: true,
+      },
+    },
+    {
+      key: &#x27;hora&#x27;,
+      type: &#x27;input&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        type:&#x27;number&#x27;,
+        label: &#x27;Horas&#x27;,
+        required: true,
+        hideRequiredMarker: true,
+        min:0.25,
+        max:8,
+        step: 0.25,
+        placeholder:&#x27;0.25 - 8&#x27;
+      },
+      validation: {
+        messages: {
+          min: &#x27;No puede ser menor a 0.25 &#x27;,
+          max: &#x27;No puedes superar más de 8 &#x27;
+        }
+      },
+      validators: {
+        stepValue: {
+          expression: (control: AbstractControl): boolean &#x3D;&gt; {
+            const v &#x3D; control.value as number;
+            return v !&#x3D; null &amp;&amp; Number.isFinite(v) &amp;&amp; Math.round(v * 4) &#x3D;&#x3D;&#x3D; v * 4;
+          },
+          message: &#x27;Solo se permiten incrementos de 0.25h&#x27;
+        }
+      }
+    }
+  ]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="180" class="link-to-prism">src/app/trabajador/dashboard-permisos-trabajador/dashboard-permisos-trabajador.component.ts:180</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Campos del formulario de edición.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="editarForm"></a>
+                    <span class="name">
+                        <span ><b>editarForm</b></span>
+                        <a href="#editarForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new FormGroup({})</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="170" class="link-to-prism">src/app/trabajador/dashboard-permisos-trabajador/dashboard-permisos-trabajador.component.ts:170</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Formulario de edición.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="editarModel"></a>
+                    <span class="name">
+                        <span ><b>editarModel</b></span>
+                        <a href="#editarModel"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{}</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="175" class="link-to-prism">src/app/trabajador/dashboard-permisos-trabajador/dashboard-permisos-trabajador.component.ts:175</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Modelo del formulario de edición.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="filterFields"></a>
+                    <span class="name">
+                        <span ><b>filterFields</b></span>
+                        <a href="#filterFields"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>FormlyFieldConfig[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+    {
+      key: &#x27;querypermisos&#x27;,
+      type: &#x27;input&#x27;,
+      props: {
+        type:&#x27;text&#x27;,
+        placeholder: &#x27;Buscar permisos...&#x27;,
+        attributes:{
+          class:&#x27;form-control form-control-sm mt-3 mb-0&#x27;,
+        }
+      },
+      hooks: {
+        onInit: (field) &#x3D;&gt; {
+          field.formControl!.valueChanges
+            .pipe(
+              debounceTime(200),
+              distinctUntilChanged(),
+            )
+            .subscribe(value &#x3D;&gt; {
+              this.applyFilter();
+            });
+        },
+      },
+    }
+  ]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="76" class="link-to-prism">src/app/trabajador/dashboard-permisos-trabajador/dashboard-permisos-trabajador.component.ts:76</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Configuración de los campos del formulario de filtro.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="filterForm"></a>
+                    <span class="name">
+                        <span ><b>filterForm</b></span>
+                        <a href="#filterForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new FormGroup({})</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="66" class="link-to-prism">src/app/trabajador/dashboard-permisos-trabajador/dashboard-permisos-trabajador.component.ts:66</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Formulario de filtro para buscar permisos.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="filterModel"></a>
+                    <span class="name">
+                        <span ><b>filterModel</b></span>
+                        <a href="#filterModel"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{}</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="71" class="link-to-prism">src/app/trabajador/dashboard-permisos-trabajador/dashboard-permisos-trabajador.component.ts:71</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Modelo del formulario de filtro.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="formatDate"></a>
+                    <span class="name">
+                            <span class="modifier">Protected</span>
+                            <span class="modifier">Readonly</span>
+                        <span ><b>formatDate</b></span>
+                        <a href="#formatDate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>formatDate</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="436" class="link-to-prism">src/app/trabajador/dashboard-permisos-trabajador/dashboard-permisos-trabajador.component.ts:436</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Referencia a utilidad para formatear fechas.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="formatHours"></a>
+                    <span class="name">
+                            <span class="modifier">Protected</span>
+                            <span class="modifier">Readonly</span>
+                        <span ><b>formatHours</b></span>
+                        <a href="#formatHours"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>formatHours</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="441" class="link-to-prism">src/app/trabajador/dashboard-permisos-trabajador/dashboard-permisos-trabajador.component.ts:441</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Referencia a utilidad para formatear horas.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="humanizeEnum"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>humanizeEnum</b></span>
+                        <a href="#humanizeEnum"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>humanizeEnum</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/trabajador/dashboard-permisos-trabajador/dashboard-permisos-trabajador.component.ts:46</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Exposición pública del helper para formatear enums.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="modalEditar"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>modalEditar</b></span>
+                        <a href="#modalEditar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../components/ModalComponent.html" target="_self" >ModalComponent</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;modalEditar&#x27;)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="165" class="link-to-prism">src/app/trabajador/dashboard-permisos-trabajador/dashboard-permisos-trabajador.component.ts:165</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Referencia al modal de edición.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="modalNuevo"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>modalNuevo</b></span>
+                        <a href="#modalNuevo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../components/ModalComponent.html" target="_self" >ModalComponent</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;modalNuevo&#x27;)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="276" class="link-to-prism">src/app/trabajador/dashboard-permisos-trabajador/dashboard-permisos-trabajador.component.ts:276</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Referencia al modal de nuevo permiso.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="nuevoFields"></a>
+                    <span class="name">
+                        <span ><b>nuevoFields</b></span>
+                        <a href="#nuevoFields"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>FormlyFieldConfig[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+    {
+      key: &#x27;permiso&#x27;,
+      type: &#x27;select&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        label: &#x27;Tipo de permiso&#x27;,
+        required: true,
+        hideRequiredMarker: true,
+        options: []
+      },
+      hooks:{
+        onInit: field &#x3D;&gt; {
+          this.permisosService.listarTiposPermiso().subscribe({
+            next: response &#x3D;&gt; {
+              field.props!.options &#x3D; response.data!.map(item &#x3D;&gt; ({
+                label: humanizeEnum(item.nombre!),
+                value: item.codigo,
+              }));
+            }
+          })
+        }
+      }
+    },
+    {
+      key: &#x27;fecha&#x27;,
+      type: &#x27;input&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        type:&#x27;date&#x27;,
+        label: &#x27;Fecha&#x27;,
+        required: true,
+        hideRequiredMarker: true,
+      },
+    },
+    {
+      key: &#x27;hora&#x27;,
+      type: &#x27;input&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        type:&#x27;number&#x27;,
+        label: &#x27;Horas&#x27;,
+        required: true,
+        hideRequiredMarker: true,
+        min:0.25,
+        max:8,
+        step: 0.25,
+        placeholder:&#x27;0.25 - 8&#x27;
+      },
+      validation: {
+        messages: {
+          min: &#x27;No puede ser menor a 0.25 &#x27;,
+          max: &#x27;No puedes superar más de 8 &#x27;
+        }
+      },
+      validators: {
+        stepValue: {
+          expression: (control: AbstractControl): boolean &#x3D;&gt; {
+            const v &#x3D; control.value as number;
+            return v !&#x3D; null &amp;&amp; Number.isFinite(v) &amp;&amp; Math.round(v * 4) &#x3D;&#x3D;&#x3D; v * 4;
+          },
+          message: &#x27;Solo se permiten incrementos de 0.25h&#x27;
+        }
+      }
+    }
+  ]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="291" class="link-to-prism">src/app/trabajador/dashboard-permisos-trabajador/dashboard-permisos-trabajador.component.ts:291</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Campos del formulario nuevo.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="nuevoForm"></a>
+                    <span class="name">
+                        <span ><b>nuevoForm</b></span>
+                        <a href="#nuevoForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new FormGroup({})</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="281" class="link-to-prism">src/app/trabajador/dashboard-permisos-trabajador/dashboard-permisos-trabajador.component.ts:281</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Formulario para solicitar nuevo permiso.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="nuevoModel"></a>
+                    <span class="name">
+                        <span ><b>nuevoModel</b></span>
+                        <a href="#nuevoModel"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{}</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="286" class="link-to-prism">src/app/trabajador/dashboard-permisos-trabajador/dashboard-permisos-trabajador.component.ts:286</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Modelo del formulario nuevo.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="permisos"></a>
+                    <span class="name">
+                        <span ><b>permisos</b></span>
+                        <a href="#permisos"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>PermisosDto[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="56" class="link-to-prism">src/app/trabajador/dashboard-permisos-trabajador/dashboard-permisos-trabajador.component.ts:56</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Lista filtrada de permisos mostrados.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="tipos"></a>
+                    <span class="name">
+                        <span ><b>tipos</b></span>
+                        <a href="#tipos"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/TipoPermisoDto.html" target="_self" >TipoPermisoDto[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/app/trabajador/dashboard-permisos-trabajador/dashboard-permisos-trabajador.component.ts:51</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Lista de tipos de permiso disponibles.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Component, OnInit, ViewChild} from &#x27;@angular/core&#x27;;
+import {PermisosDto, PermisosService, TipoPermisoDto} from &quot;../../../openapi&quot;;
+import {MatSnackBar} from &quot;@angular/material/snack-bar&quot;;
+import {NgForOf, NgIf} from &quot;@angular/common&quot;;
+import {FormlyFieldConfig, FormlyModule} from &quot;@ngx-formly/core&quot;;
+import {AbstractControl, FormGroup, ReactiveFormsModule} from &quot;@angular/forms&quot;;
+import {FormlyBootstrapModule} from &quot;@ngx-formly/bootstrap&quot;;
+import {MatDatepickerModule} from &quot;@angular/material/datepicker&quot;;
+import {MatFormFieldModule} from &quot;@angular/material/form-field&quot;;
+import {MatInputModule} from &quot;@angular/material/input&quot;;
+import {MatButtonModule} from &quot;@angular/material/button&quot;;
+import {debounceTime, distinctUntilChanged} from &quot;rxjs&quot;;
+import {ModalComponent} from &quot;../../core/modal/modal.component&quot;;
+import {formatDate, formatHours, humanizeEnum} from &quot;../../core/library/library&quot;;
+
+@Component({
+  selector: &#x27;app-dashboard-permisos-trabajador&#x27;,
+  standalone: true,
+  templateUrl: &#x27;./dashboard-permisos-trabajador.component.html&#x27;,
+  imports: [
+    NgIf,
+    NgForOf,
+    FormlyModule,
+    ReactiveFormsModule,
+    FormlyBootstrapModule,
+    MatDatepickerModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    ModalComponent,
+  ],
+  styleUrl: &#x27;./dashboard-permisos-trabajador.component.scss&#x27;
+})
+export class DashboardPermisosTrabajadorComponent implements OnInit {
+
+  /**
+   * Exposición pública del helper para formatear enums.
+   */
+  public humanizeEnum &#x3D; humanizeEnum;
+
+  /**
+   * Lista de tipos de permiso disponibles.
+   */
+  tipos: TipoPermisoDto[] &#x3D; [];
+
+  /**
+   * Lista filtrada de permisos mostrados.
+   */
+  permisos: PermisosDto[] &#x3D; [];
+
+  /**
+   * Lista completa de permisos, sin filtros.
+   */
+  allPermisos: PermisosDto[] &#x3D; [];
+
+  /**
+   * Formulario de filtro para buscar permisos.
+   */
+  filterForm &#x3D; new FormGroup({});
+
+  /**
+   * Modelo del formulario de filtro.
+   */
+  filterModel: any &#x3D; {};
+
+  /**
+   * Configuración de los campos del formulario de filtro.
+   */
+  filterFields: FormlyFieldConfig[] &#x3D; [
+    {
+      key: &#x27;querypermisos&#x27;,
+      type: &#x27;input&#x27;,
+      props: {
+        type:&#x27;text&#x27;,
+        placeholder: &#x27;Buscar permisos...&#x27;,
+        attributes:{
+          class:&#x27;form-control form-control-sm mt-3 mb-0&#x27;,
+        }
+      },
+      hooks: {
+        onInit: (field) &#x3D;&gt; {
+          field.formControl!.valueChanges
+            .pipe(
+              debounceTime(200),
+              distinctUntilChanged(),
+            )
+            .subscribe(value &#x3D;&gt; {
+              this.applyFilter();
+            });
+        },
+      },
+    }
+  ];
+
+  /**
+   * Constructor del componente que inyecta servicios.
+   *
+   * @param permisosService Servicio para permisos.
+   * @param snackBar Servicio para mensajes snackbar.
+   */
+  constructor(private permisosService: PermisosService, private snackBar: MatSnackBar) {}
+
+  /**
+   * Hook de inicialización.
+   * Carga tipos de permiso y permisos actuales.
+   */
+  ngOnInit():void {
+    this.permisosService.listarTiposPermiso().subscribe({
+      next: tipos &#x3D;&gt; {
+        this.tipos &#x3D; tipos.data!
+      },
+      error: ()    &#x3D;&gt; this.snackBar.open(&#x27;Error cargando tipos de permiso&#x27;, &#x27;&#x27;, { panelClass: [&#x27;snackbar-error&#x27;] })
+    });
+
+    this.loadPermisos();
+  }
+
+  /**
+   * Carga todos los permisos del trabajador y los ordena.
+   */
+  private loadPermisos() {
+    this.permisosService.permisosPorTrabajadorId().subscribe({
+      next: datos &#x3D;&gt; {
+        this.allPermisos &#x3D; datos.data!;
+        this.permisos    &#x3D; [...datos.data!];
+        this.permisos.sort((a, b) &#x3D;&gt; {
+          if (!a.fecha) return 1;
+          if (!b.fecha) return -1;
+
+          const dateA &#x3D; new Date(a.fecha);
+          const dateB &#x3D; new Date(b.fecha);
+          return dateB.getTime() - dateA.getTime();
+        });
+      },
+      error: () &#x3D;&gt; this.snackBar.open(&#x27;No se pudieron recuperar tus permisos&#x27;, &#x27;&#x27;, { panelClass: [&#x27;snackbar-error&#x27;] })
+    });
+  }
+
+/**
+ * Aplica el filtro sobre los permisos según la búsqueda.
+ */
+private applyFilter() {
+    const query &#x3D; (this.filterModel.querypermisos ?? &#x27;&#x27;).toString().toLowerCase().trim();
+
+    if (!query) {
+      this.permisos &#x3D; [...this.allPermisos];
+    } else {
+      this.permisos &#x3D; this.allPermisos.filter(p &#x3D;&gt;
+        p.permiso?.toLowerCase().includes(query) ||
+        p.estado?.toLowerCase().includes(query)
+      );
+    }
+  }
+
+  /**
+   * Referencia al modal de edición.
+   */
+  @ViewChild(&quot;modalEditar&quot;) modalEditar!: ModalComponent;
+
+  /**
+   * Formulario de edición.
+   */
+  editarForm &#x3D; new FormGroup({});
+
+  /**
+   * Modelo del formulario de edición.
+   */
+  editarModel: any &#x3D; {};
+
+  /**
+   * Campos del formulario de edición.
+   */
+  editarFields: FormlyFieldConfig[] &#x3D; [
+    {
+      key: &#x27;permiso&#x27;,
+      type: &#x27;select&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        label: &#x27;Tipo de permiso&#x27;,
+        required: true,
+        hideRequiredMarker: true,
+        options: []
+      },
+      hooks:{
+        onInit: field &#x3D;&gt; {
+          this.permisosService.listarTiposPermiso().subscribe({
+            next: response &#x3D;&gt; {
+              field.props!.options &#x3D; response.data!.map(item &#x3D;&gt; ({
+                label: humanizeEnum(item.nombre!),
+                value: item.codigo,
+              }));
+            }
+          })
+        }
+      }
+    },
+    {
+      key: &#x27;fecha&#x27;,
+      type: &#x27;input&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        type:&#x27;date&#x27;,
+        label: &#x27;Fecha&#x27;,
+        required: true,
+        hideRequiredMarker: true,
+      },
+    },
+    {
+      key: &#x27;hora&#x27;,
+      type: &#x27;input&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        type:&#x27;number&#x27;,
+        label: &#x27;Horas&#x27;,
+        required: true,
+        hideRequiredMarker: true,
+        min:0.25,
+        max:8,
+        step: 0.25,
+        placeholder:&#x27;0.25 - 8&#x27;
+      },
+      validation: {
+        messages: {
+          min: &#x27;No puede ser menor a 0.25 &#x27;,
+          max: &#x27;No puedes superar más de 8 &#x27;
+        }
+      },
+      validators: {
+        stepValue: {
+          expression: (control: AbstractControl): boolean &#x3D;&gt; {
+            const v &#x3D; control.value as number;
+            return v !&#x3D; null &amp;&amp; Number.isFinite(v) &amp;&amp; Math.round(v * 4) &#x3D;&#x3D;&#x3D; v * 4;
+          },
+          message: &#x27;Solo se permiten incrementos de 0.25h&#x27;
+        }
+      }
+    }
+  ];
+
+  /**
+   * Abre el modal de edición para un permiso.
+   * @param p Permiso a editar.
+   */
+  openModalEditar(p: PermisosDto) {
+    this.editarModel &#x3D; {...p};
+    this.editarForm.patchValue(this.editarModel);
+    this.modalEditar.open();
+  }
+
+  /**
+   * Guarda los cambios del permiso editado.
+   */
+  editarPermiso() {
+    this.permisosService.editar(this.editarModel).subscribe({
+      next: response &#x3D;&gt; {
+        this.loadPermisos();
+        this.modalEditar.close();
+        this.snackbarok(&quot;El permiso se ha editado correctamente!&quot;)
+      },
+      error: () &#x3D;&gt; {
+        this.snackbarnok(&quot;Ha ocurrido un error al actualizar el permiso.&quot;)
+      }
+    })
+  }
+
+  /**
+   * Referencia al modal de nuevo permiso.
+   */
+  @ViewChild(&quot;modalNuevo&quot;) modalNuevo!: ModalComponent;
+
+  /**
+   * Formulario para solicitar nuevo permiso.
+   */
+  nuevoForm &#x3D; new FormGroup({});
+
+  /**
+   * Modelo del formulario nuevo.
+   */
+  nuevoModel: any &#x3D; {};
+
+  /**
+   * Campos del formulario nuevo.
+   */
+  nuevoFields: FormlyFieldConfig[] &#x3D; [
+    {
+      key: &#x27;permiso&#x27;,
+      type: &#x27;select&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        label: &#x27;Tipo de permiso&#x27;,
+        required: true,
+        hideRequiredMarker: true,
+        options: []
+      },
+      hooks:{
+        onInit: field &#x3D;&gt; {
+          this.permisosService.listarTiposPermiso().subscribe({
+            next: response &#x3D;&gt; {
+              field.props!.options &#x3D; response.data!.map(item &#x3D;&gt; ({
+                label: humanizeEnum(item.nombre!),
+                value: item.codigo,
+              }));
+            }
+          })
+        }
+      }
+    },
+    {
+      key: &#x27;fecha&#x27;,
+      type: &#x27;input&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        type:&#x27;date&#x27;,
+        label: &#x27;Fecha&#x27;,
+        required: true,
+        hideRequiredMarker: true,
+      },
+    },
+    {
+      key: &#x27;hora&#x27;,
+      type: &#x27;input&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        type:&#x27;number&#x27;,
+        label: &#x27;Horas&#x27;,
+        required: true,
+        hideRequiredMarker: true,
+        min:0.25,
+        max:8,
+        step: 0.25,
+        placeholder:&#x27;0.25 - 8&#x27;
+      },
+      validation: {
+        messages: {
+          min: &#x27;No puede ser menor a 0.25 &#x27;,
+          max: &#x27;No puedes superar más de 8 &#x27;
+        }
+      },
+      validators: {
+        stepValue: {
+          expression: (control: AbstractControl): boolean &#x3D;&gt; {
+            const v &#x3D; control.value as number;
+            return v !&#x3D; null &amp;&amp; Number.isFinite(v) &amp;&amp; Math.round(v * 4) &#x3D;&#x3D;&#x3D; v * 4;
+          },
+          message: &#x27;Solo se permiten incrementos de 0.25h&#x27;
+        }
+      }
+    }
+  ];
+
+  /**
+   * Abre el modal para solicitar un nuevo permiso.
+   */
+  abrirModalNuevo(){
+    this.nuevoForm.reset();
+    this.modalNuevo.open();
+  }
+
+  /**
+   * Envía la solicitud de nuevo permiso.
+   */
+  nuevoPermiso(){
+    this.permisosService.solicitar(this.nuevoModel).subscribe({
+      next: response &#x3D;&gt; {
+        this.snackbarok(&quot;Solicitud enviadad correctamente.&quot;);
+        this.loadPermisos();
+        this.modalNuevo.close();
+      },
+      error: () &#x3D;&gt; {
+        this.snackbarnok(&quot;Ha ocurrido un error al solicitar el permiso.&quot;);
+        this.modalNuevo.close();
+      }
+    })
+  }
+
+  /**
+   * Elimina un permiso dado su ID.
+   * @param permisoId ID del permiso.
+   */
+  delete(permisoId: number) {
+    this.permisosService.eliminarPermiso({id:permisoId}).subscribe({
+      next: response &#x3D;&gt; {
+        this.snackbarok(&quot;Permiso eliminado correctamente.&quot;);
+        this.loadPermisos();
+      },
+      error: () &#x3D;&gt; {
+        this.snackbarnok(&quot;Ha ocurrido un error al eliminar el permiso.&quot;);
+      }
+    })
+  }
+
+  /**
+   * Muestra un mensaje snackbar de éxito.
+   * @param mensaje Mensaje a mostrar.
+   */
+  snackbarok(mensaje:string){
+    this.snackBar.open(
+      mensaje,
+      &#x27;&#x27;,
+      {
+        duration: 3000,
+        horizontalPosition: &#x27;right&#x27;,
+        verticalPosition: &#x27;bottom&#x27;,
+        panelClass: [&#x27;snackbar-success&#x27;],
+      }
+    );
+  }
+
+  /**
+   * Muestra un mensaje snackbar de error.
+   * @param mensaje Mensaje a mostrar.
+   */
+  snackbarnok(mensaje:string){
+    this.snackBar.open(
+      mensaje,
+      &#x27;&#x27;,
+      {
+        duration: 3000,
+        horizontalPosition: &#x27;right&#x27;,
+        verticalPosition: &#x27;bottom&#x27;,
+        panelClass: [&#x27;snackbar-error&#x27;],
+      }
+    );
+  }
+
+  /**
+   * Referencia a utilidad para formatear fechas.
+   */
+  protected readonly formatDate &#x3D; formatDate;
+
+  /**
+   * Referencia a utilidad para formatear horas.
+   */
+  protected readonly formatHours &#x3D; formatHours;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;card shadow-sm h-100 d-flex flex-column bg-gris text-blanco&quot;&gt;
+    &lt;div class&#x3D;&quot;card-header m-0 py-0 d-flex align-items-center&quot;&gt;
+
+        &lt;h5 class&#x3D;&quot;m-0 flex-grow-1&quot;&gt;Mis Permisos&lt;/h5&gt;
+        &lt;formly-form class&#x3D;&quot;d-flex align-items-center m-0&quot; [form]&#x3D;&quot;filterForm&quot; [fields]&#x3D;&quot;filterFields&quot; [model]&#x3D;&quot;filterModel&quot;&gt;&lt;/formly-form&gt;
+
+        &lt;button class&#x3D;&quot;btn btn-sm btn-azul-claro m-0 ms-2&quot; (click)&#x3D;&quot;abrirModalNuevo()&quot; &gt;
+            &lt;i class&#x3D;&quot;bi bi-plus-lg&quot;&gt;&lt;/i&gt; Nueva solicitud
+        &lt;/button&gt;
+    &lt;/div&gt;
+
+    &lt;!-- tabla --&gt;
+    &lt;div class&#x3D;&quot;table-responsive tabla-scroll-wrapper&quot; style&#x3D;&quot;height: 50vh&quot;&gt;
+        &lt;table class&#x3D;&quot;table table-sm mb-0 table-glass&quot;&gt;
+            &lt;thead class&#x3D;&quot;sticky-top&quot;&gt;
+            &lt;tr class&#x3D;&quot;text-center&quot;&gt;
+                &lt;th&gt;Tipo&lt;/th&gt;
+                &lt;th&gt;Fecha&lt;/th&gt;
+                &lt;th&gt;Horas&lt;/th&gt;
+                &lt;th&gt;Estado&lt;/th&gt;
+                &lt;th&gt;&lt;/th&gt;
+            &lt;/tr&gt;
+            &lt;/thead&gt;
+            &lt;tbody&gt;
+            &lt;tr *ngFor&#x3D;&quot;let p of permisos&quot; class&#x3D;&quot;text-center align-middle&quot;&gt;
+                &lt;td &gt;{{ humanizeEnum(p.permiso!) }}&lt;/td&gt;
+                &lt;td &gt;{{ formatDate(p.fecha!) }}&lt;/td&gt;
+                &lt;td &gt;{{ formatHours(p.hora!)}}&lt;/td&gt;
+                &lt;td &gt;{{ humanizeEnum(p.estado!) }}&lt;/td&gt;
+                &lt;td &gt;
+                    &lt;ng-container *ngIf&#x3D;&quot;p.estado&#x3D;&#x3D;&#x3D;&#x27;SOLICITADO&#x27; else gestionado&quot; &gt;
+                        &lt;button class&#x3D;&quot;btn btn-sm btn-warning me-1&quot; (click)&#x3D;&quot;openModalEditar(p)&quot;&gt;
+                            &lt;i class&#x3D;&quot;bi bi-pencil&quot;&gt;&lt;/i&gt;
+                        &lt;/button&gt;
+                        &lt;button class&#x3D;&quot;btn btn-sm btn-danger&quot; (click)&#x3D;&quot;delete(p.id!)&quot;&gt;
+                            &lt;i class&#x3D;&quot;bi bi-trash&quot;&gt;&lt;/i&gt;
+                        &lt;/button&gt;
+                    &lt;/ng-container&gt;
+                    &lt;ng-template #gestionado&gt;
+                        &lt;button class&#x3D;&quot;btn btn-sm invisible&quot; &gt;
+                            &lt;i class&#x3D;&quot;bi bi-trash&quot;&gt;&lt;/i&gt;
+                        &lt;/button&gt;
+                    &lt;/ng-template&gt;
+                &lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;/tbody&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;app-modal #modalEditar [title]&#x3D;&quot;&#x27;Editar Permiso&#x27;&quot;&gt;
+    &lt;formly-form [form]&#x3D;&quot;editarForm&quot; [fields]&#x3D;&quot;editarFields&quot; [model]&#x3D;&quot;editarModel&quot;&gt;&lt;/formly-form&gt;
+    &lt;button modal-footer class&#x3D;&quot;btn btn-secondary&quot; (click)&#x3D;&quot;editarPermiso()&quot; [disabled]&#x3D;&quot;!editarForm.valid&quot;&gt;Guardar&lt;/button&gt;
+&lt;/app-modal&gt;
+
+&lt;app-modal #modalNuevo [title]&#x3D;&quot;&#x27;Solicitar Permiso&#x27;&quot;&gt;
+    &lt;formly-form [form]&#x3D;&quot;nuevoForm&quot; [fields]&#x3D;&quot;nuevoFields&quot; [model]&#x3D;&quot;nuevoModel&quot;&gt;&lt;/formly-form&gt;
+    &lt;button modal-footer class&#x3D;&quot;btn btn-secondary&quot; (click)&#x3D;&quot;nuevoPermiso()&quot; [disabled]&#x3D;&quot;!nuevoForm.valid&quot;&gt;Solicitar&lt;/button&gt;
+&lt;/app-modal&gt;</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="card shadow-sm h-100 d-flex flex-column bg-gris text-blanco">    <div class="card-header m-0 py-0 d-flex align-items-center">        <h5 class="m-0 flex-grow-1">Mis Permisos</h5>        <formly-form class="d-flex align-items-center m-0" [form]="filterForm" [fields]="filterFields" [model]="filterModel"></formly-form>        <button class="btn btn-sm btn-azul-claro m-0 ms-2" (click)="abrirModalNuevo()" >            <i class="bi bi-plus-lg"></i> Nueva solicitud        </button>    </div>    <!-- tabla -->    <div class="table-responsive tabla-scroll-wrapper" style="height: 50vh">        <table class="table table-sm mb-0 table-glass">            <thead class="sticky-top">            <tr class="text-center">                <th>Tipo</th>                <th>Fecha</th>                <th>Horas</th>                <th>Estado</th>                <th></th>            </tr>            </thead>            <tbody>            <tr *ngFor="let p of permisos" class="text-center align-middle">                <td >{{ humanizeEnum(p.permiso!) }}</td>                <td >{{ formatDate(p.fecha!) }}</td>                <td >{{ formatHours(p.hora!)}}</td>                <td >{{ humanizeEnum(p.estado!) }}</td>                <td >                    <ng-container *ngIf="p.estado===\'SOLICITADO\' else gestionado" >                        <button class="btn btn-sm btn-warning me-1" (click)="openModalEditar(p)">                            <i class="bi bi-pencil"></i>                        </button>                        <button class="btn btn-sm btn-danger" (click)="delete(p.id!)">                            <i class="bi bi-trash"></i>                        </button>                    </ng-container>                    <ng-template #gestionado>                        <button class="btn btn-sm invisible" >                            <i class="bi bi-trash"></i>                        </button>                    </ng-template>                </td>            </tr>            </tbody>        </table>    </div></div><app-modal #modalEditar [title]="\'Editar Permiso\'">    <formly-form [form]="editarForm" [fields]="editarFields" [model]="editarModel"></formly-form>    <button modal-footer class="btn btn-secondary" (click)="editarPermiso()" [disabled]="!editarForm.valid">Guardar</button></app-modal><app-modal #modalNuevo [title]="\'Solicitar Permiso\'">    <formly-form [form]="nuevoForm" [fields]="nuevoFields" [model]="nuevoModel"></formly-form>    <button modal-footer class="btn btn-secondary" (click)="nuevoPermiso()" [disabled]="!nuevoForm.valid">Solicitar</button></app-modal></div>'
+    var COMPONENTS = [{'name': 'AltaEmpresaComponent', 'selector': 'app-alta-empresa'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'DashboardFichajesComponent', 'selector': 'app-dashboard-fichajes'},{'name': 'DashboardFichajesTrabajadorComponent', 'selector': 'app-dashboard-fichajes-trabajador'},{'name': 'DashboardNominasTrabajadorComponent', 'selector': 'app-dashboard-nominas-trabajador'},{'name': 'DashboardPermisosComponent', 'selector': 'app-dashboard-permisos'},{'name': 'DashboardPermisosTrabajadorComponent', 'selector': 'app-dashboard-permisos-trabajador'},{'name': 'DashboardTrabajadoresComponent', 'selector': 'app-dashboard-trabajadores'},{'name': 'EmpresaDashboardComponent', 'selector': 'app-empresa-dashboard'},{'name': 'FormlyHorizontalWrapper', 'selector': 'formly-horizontal-wrapper'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'ModalComponent', 'selector': 'app-modal'},{'name': 'NavbarEmpresaComponent', 'selector': 'app-navbar-empresa'},{'name': 'NavbarTrabajadorComponent', 'selector': 'app-navbar-trabajador'},{'name': 'PageNotFoundComponent', 'selector': 'app-page-not-found'},{'name': 'TrabajadorDashboardComponent', 'selector': 'app-trabajador-dashboard'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'DashboardPermisosTrabajadorComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'DashboardPermisosTrabajadorComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,5041 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>time-bee-front documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">time-bee-front documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  DashboardTrabajadoresComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/empresa/dashboard-trabajadores/dashboard-trabajadores.component.ts</code>
+</p>
+
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Componente que gestiona el dashboard de trabajadores.
+Permite visualizar, buscar, editar, eliminar y consultar nóminas.</p>
+
+    </p>
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+                <code>AfterViewInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-dashboard-trabajadores</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">standalone</td>
+                <td class="col-md-9"><code>true</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                            <code>NgForOf</code>
+                            <code>ReactiveFormsModule</code>
+                            <code>FormlyModule</code>
+                                <code><a href="../components/ModalComponent.html" target="_self" >ModalComponent</a></code>
+                            <code>NgIf</code>
+                            <code>NgClass</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./dashboard-trabajadores.component.html</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrl</td>
+                <td class="col-md-9"><code>./dashboard-trabajadores.component.scss</code></td>
+            </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#allTrabajadores" >allTrabajadores</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#cardStep" >cardStep</a>
+                            </li>
+                            <li>
+                                <a href="#currentTrabajador" >currentTrabajador</a>
+                            </li>
+                            <li>
+                                <a href="#detalleFields" >detalleFields</a>
+                            </li>
+                            <li>
+                                <a href="#detalleForm" >detalleForm</a>
+                            </li>
+                            <li>
+                                <a href="#detalleModel" >detalleModel</a>
+                            </li>
+                            <li>
+                                <a href="#editarFields" >editarFields</a>
+                            </li>
+                            <li>
+                                <a href="#editarForm" >editarForm</a>
+                            </li>
+                            <li>
+                                <a href="#editarModel" >editarModel</a>
+                            </li>
+                            <li>
+                                <a href="#eliminarFields" >eliminarFields</a>
+                            </li>
+                            <li>
+                                <a href="#eliminarForm" >eliminarForm</a>
+                            </li>
+                            <li>
+                                <a href="#eliminarModel" >eliminarModel</a>
+                            </li>
+                            <li>
+                                <a href="#fichajesFiltrados" >fichajesFiltrados</a>
+                            </li>
+                            <li>
+                                <a href="#filterFields" >filterFields</a>
+                            </li>
+                            <li>
+                                <a href="#filterForm" >filterForm</a>
+                            </li>
+                            <li>
+                                <a href="#filterModel" >filterModel</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#formatDate" >formatDate</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                <a href="#modalDetalle" >modalDetalle</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                <a href="#modalEditar" >modalEditar</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                <a href="#modalEliminar" >modalEliminar</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                <a href="#modalFichajes" >modalFichajes</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                <a href="#modalNomina" >modalNomina</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                <a href="#modalNuevoTrabajador" >modalNuevoTrabajador</a>
+                            </li>
+                            <li>
+                                <a href="#nombre" >nombre</a>
+                            </li>
+                            <li>
+                                <a href="#nominasTrabajador" >nominasTrabajador</a>
+                            </li>
+                            <li>
+                                <a href="#nuevoFields" >nuevoFields</a>
+                            </li>
+                            <li>
+                                <a href="#nuevoForm" >nuevoForm</a>
+                            </li>
+                            <li>
+                                <a href="#nuevoModel" >nuevoModel</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                <a href="#scrollArea" >scrollArea</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#scrollInterval" >scrollInterval</a>
+                            </li>
+                            <li>
+                                <a href="#showUploadForm" >showUploadForm</a>
+                            </li>
+                            <li>
+                                <a href="#trabajadorEditado" >trabajadorEditado</a>
+                            </li>
+                            <li>
+                                <a href="#trabajadores" >trabajadores</a>
+                            </li>
+                            <li>
+                                <a href="#uploadForm" >uploadForm</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#abrirModalNuevoTrabajador" >abrirModalNuevoTrabajador</a>
+                            </li>
+                            <li>
+                                <a href="#actualizarTrabajador" >actualizarTrabajador</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#addScrollListeners" >addScrollListeners</a>
+                            </li>
+                            <li>
+                                <a href="#cambiarFormularioSubirNomina" >cambiarFormularioSubirNomina</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#cargarTrabajadores" >cargarTrabajadores</a>
+                            </li>
+                            <li>
+                                <a href="#confirmarEliminacion" >confirmarEliminacion</a>
+                            </li>
+                            <li>
+                                <a href="#descargarNomina" >descargarNomina</a>
+                            </li>
+                            <li>
+                                <a href="#eliminarNomina" >eliminarNomina</a>
+                            </li>
+                            <li>
+                                <a href="#eliminarTrabajador" >eliminarTrabajador</a>
+                            </li>
+                            <li>
+                                <a href="#guardarNuevoTrabajador" >guardarNuevoTrabajador</a>
+                            </li>
+                            <li>
+                                <a href="#ngAfterViewInit" >ngAfterViewInit</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onFileChange" >onFileChange</a>
+                            </li>
+                            <li>
+                                <a href="#onSearch" >onSearch</a>
+                            </li>
+                            <li>
+                                <a href="#openModalEditar" >openModalEditar</a>
+                            </li>
+                            <li>
+                                <a href="#openModalFichajes" >openModalFichajes</a>
+                            </li>
+                            <li>
+                                <a href="#openModalNomina" >openModalNomina</a>
+                            </li>
+                            <li>
+                                <a href="#scroll" >scroll</a>
+                            </li>
+                            <li>
+                                <a href="#snackbarnok" >snackbarnok</a>
+                            </li>
+                            <li>
+                                <a href="#snackbarok" >snackbarok</a>
+                            </li>
+                            <li>
+                                <a href="#startScroll" >startScroll</a>
+                            </li>
+                            <li>
+                                <a href="#stopScroll" >stopScroll</a>
+                            </li>
+                            <li>
+                                <a href="#submitUpload" >submitUpload</a>
+                            </li>
+                            <li>
+                                <a href="#verDetalleTrabajador" >verDetalleTrabajador</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#mensajeBoton" >mensajeBoton</a>
+                                </li>
+                                <li>
+                                    <a href="#iconoBoton" >iconoBoton</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(empresaService: <a href="../injectables/EmpresasService.html" target="_self">EmpresasService</a>, generoService: <a href="../injectables/GenerosService.html" target="_self">GenerosService</a>, nominaService: <a href="../injectables/NominasService.html" target="_self">NominasService</a>, fb: FormBuilder, http: HttpClient, snackBar: MatSnackBar)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="57" class="link-to-prism">src/app/empresa/dashboard-trabajadores/dashboard-trabajadores.component.ts:57</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>empresaService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/EmpresasService.html" target="_self" >EmpresasService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>generoService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/GenerosService.html" target="_self" >GenerosService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>nominaService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/NominasService.html" target="_self" >NominasService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>fb</td>
+                                                  
+                                                        <td>
+                                                                    <code>FormBuilder</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>http</td>
+                                                  
+                                                        <td>
+                                                                    <code>HttpClient</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>snackBar</td>
+                                                  
+                                                        <td>
+                                                                    <code>MatSnackBar</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="abrirModalNuevoTrabajador"></a>
+                    <span class="name">
+                        <span ><b>abrirModalNuevoTrabajador</b></span>
+                        <a href="#abrirModalNuevoTrabajador"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>abrirModalNuevoTrabajador()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="1055"
+                                    class="link-to-prism">src/app/empresa/dashboard-trabajadores/dashboard-trabajadores.component.ts:1055</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Abre el modal para crear un nuevo trabajador y resetea el formulario.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="actualizarTrabajador"></a>
+                    <span class="name">
+                        <span ><b>actualizarTrabajador</b></span>
+                        <a href="#actualizarTrabajador"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>actualizarTrabajador()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="588"
+                                    class="link-to-prism">src/app/empresa/dashboard-trabajadores/dashboard-trabajadores.component.ts:588</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Envía los datos editados del trabajador al backend para actualizarlo.
+Tras actualizar, recarga la lista de trabajadores.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addScrollListeners"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>addScrollListeners</b></span>
+                        <a href="#addScrollListeners"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>addScrollListeners()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="1081"
+                                    class="link-to-prism">src/app/empresa/dashboard-trabajadores/dashboard-trabajadores.component.ts:1081</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Agrega un listener para permitir el scroll horizontal con la rueda del ratón.
+Apunta al área de scroll de tarjetas.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cambiarFormularioSubirNomina"></a>
+                    <span class="name">
+                        <span ><b>cambiarFormularioSubirNomina</b></span>
+                        <a href="#cambiarFormularioSubirNomina"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>cambiarFormularioSubirNomina()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="719"
+                                    class="link-to-prism">src/app/empresa/dashboard-trabajadores/dashboard-trabajadores.component.ts:719</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Alterna entre mostrar el formulario de subida de nómina o consultar las nóminas.
+También resetea el formulario y precarga el ID del trabajador actual.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cargarTrabajadores"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>cargarTrabajadores</b></span>
+                        <a href="#cargarTrabajadores"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>cargarTrabajadores()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="79"
+                                    class="link-to-prism">src/app/empresa/dashboard-trabajadores/dashboard-trabajadores.component.ts:79</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Carga la lista de trabajadores desde el backend.
+Ordena por fecha de antigüedad de forma descendente.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="confirmarEliminacion"></a>
+                    <span class="name">
+                        <span ><b>confirmarEliminacion</b></span>
+                        <a href="#confirmarEliminacion"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>confirmarEliminacion(trabajador: TrabajadorDto)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="387"
+                                    class="link-to-prism">src/app/empresa/dashboard-trabajadores/dashboard-trabajadores.component.ts:387</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Abre el modal de eliminación para un trabajador específico.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>trabajador</td>
+                                            <td>
+                                                        <code>TrabajadorDto</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Trabajador seleccionado para eliminar.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="descargarNomina"></a>
+                    <span class="name">
+                        <span ><b>descargarNomina</b></span>
+                        <a href="#descargarNomina"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>descargarNomina(nomina: <a href="../interfaces/NominaMetadataDto.html" target="_self">NominaMetadataDto</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="649"
+                                    class="link-to-prism">src/app/empresa/dashboard-trabajadores/dashboard-trabajadores.component.ts:649</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Descarga la nómina seleccionada como archivo PDF.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>nomina</td>
+                                            <td>
+                                                            <code><a href="../interfaces/NominaMetadataDto.html" target="_self" >NominaMetadataDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Nómina a descargar.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="eliminarNomina"></a>
+                    <span class="name">
+                        <span ><b>eliminarNomina</b></span>
+                        <a href="#eliminarNomina"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>eliminarNomina(nomina: <a href="../interfaces/NominaMetadataDto.html" target="_self">NominaMetadataDto</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="688"
+                                    class="link-to-prism">src/app/empresa/dashboard-trabajadores/dashboard-trabajadores.component.ts:688</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Elimina la nómina seleccionada del trabajador.
+Tras eliminar, recarga la lista de nóminas.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>nomina</td>
+                                            <td>
+                                                            <code><a href="../interfaces/NominaMetadataDto.html" target="_self" >NominaMetadataDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Nómina a eliminar.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="eliminarTrabajador"></a>
+                    <span class="name">
+                        <span ><b>eliminarTrabajador</b></span>
+                        <a href="#eliminarTrabajador"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>eliminarTrabajador()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="395"
+                                    class="link-to-prism">src/app/empresa/dashboard-trabajadores/dashboard-trabajadores.component.ts:395</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Elimina al trabajador seleccionado y actualiza la lista.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="guardarNuevoTrabajador"></a>
+                    <span class="name">
+                        <span ><b>guardarNuevoTrabajador</b></span>
+                        <a href="#guardarNuevoTrabajador"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>guardarNuevoTrabajador()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="1063"
+                                    class="link-to-prism">src/app/empresa/dashboard-trabajadores/dashboard-trabajadores.component.ts:1063</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Envía los datos del nuevo trabajador al backend y actualiza la lista.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngAfterViewInit"></a>
+                    <span class="name">
+                        <span ><b>ngAfterViewInit</b></span>
+                        <a href="#ngAfterViewInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngAfterViewInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="102"
+                                    class="link-to-prism">src/app/empresa/dashboard-trabajadores/dashboard-trabajadores.component.ts:102</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Hook que se ejecuta después de que la vista ha sido inicializada.
+Configura listeners de búsqueda y scroll horizontal.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="71"
+                                    class="link-to-prism">src/app/empresa/dashboard-trabajadores/dashboard-trabajadores.component.ts:71</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Hook de inicialización. Carga la lista de trabajadores.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onFileChange"></a>
+                    <span class="name">
+                        <span ><b>onFileChange</b></span>
+                        <a href="#onFileChange"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onFileChange(event: Event)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="745"
+                                    class="link-to-prism">src/app/empresa/dashboard-trabajadores/dashboard-trabajadores.component.ts:745</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Captura el cambio en el input de archivo y actualiza el formulario.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                        <code>Event</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Evento del input file.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSearch"></a>
+                    <span class="name">
+                        <span ><b>onSearch</b></span>
+                        <a href="#onSearch"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onSearch()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="191"
+                                    class="link-to-prism">src/app/empresa/dashboard-trabajadores/dashboard-trabajadores.component.ts:191</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Filtra la lista de trabajadores según el texto ingresado.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="openModalEditar"></a>
+                    <span class="name">
+                        <span ><b>openModalEditar</b></span>
+                        <a href="#openModalEditar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>openModalEditar(trabajador: TrabajadorDto)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="578"
+                                    class="link-to-prism">src/app/empresa/dashboard-trabajadores/dashboard-trabajadores.component.ts:578</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Abre el modal de edición con los datos del trabajador seleccionado.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>trabajador</td>
+                                            <td>
+                                                        <code>TrabajadorDto</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Trabajador que se va a editar.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="openModalFichajes"></a>
+                    <span class="name">
+                        <span ><b>openModalFichajes</b></span>
+                        <a href="#openModalFichajes"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>openModalFichajes(t: TrabajadorDto)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="797"
+                                    class="link-to-prism">src/app/empresa/dashboard-trabajadores/dashboard-trabajadores.component.ts:797</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Abre el modal de fichajes para un trabajador específico.
+Recupera, filtra, ordena y formatea los 10 fichajes más recientes.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>t</td>
+                                            <td>
+                                                        <code>TrabajadorDto</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Trabajador seleccionado.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="openModalNomina"></a>
+                    <span class="name">
+                        <span ><b>openModalNomina</b></span>
+                        <a href="#openModalNomina"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>openModalNomina(trabajador: TrabajadorDto)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="629"
+                                    class="link-to-prism">src/app/empresa/dashboard-trabajadores/dashboard-trabajadores.component.ts:629</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Abre el modal de nóminas para el trabajador seleccionado.
+Carga las nóminas desde el backend.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>trabajador</td>
+                                            <td>
+                                                        <code>TrabajadorDto</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Trabajador seleccionado.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="scroll"></a>
+                    <span class="name">
+                        <span ><b>scroll</b></span>
+                        <a href="#scroll"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>scroll(direction: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="135"
+                                    class="link-to-prism">src/app/empresa/dashboard-trabajadores/dashboard-trabajadores.component.ts:135</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Realiza un desplazamiento horizontal en la dirección indicada.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>direction</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Dirección del desplazamiento (-1 izquierda, 1 derecha).</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="snackbarnok"></a>
+                    <span class="name">
+                        <span ><b>snackbarnok</b></span>
+                        <a href="#snackbarnok"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>snackbarnok(mensaje: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="869"
+                                    class="link-to-prism">src/app/empresa/dashboard-trabajadores/dashboard-trabajadores.component.ts:869</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Muestra un mensaje de error con el snackbar.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>mensaje</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Texto del mensaje.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="snackbarok"></a>
+                    <span class="name">
+                        <span ><b>snackbarok</b></span>
+                        <a href="#snackbarok"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>snackbarok(mensaje: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="852"
+                                    class="link-to-prism">src/app/empresa/dashboard-trabajadores/dashboard-trabajadores.component.ts:852</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Muestra un mensaje de éxito con el snackbar.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>mensaje</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Texto del mensaje.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="startScroll"></a>
+                    <span class="name">
+                        <span ><b>startScroll</b></span>
+                        <a href="#startScroll"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>startScroll(direction: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="146"
+                                    class="link-to-prism">src/app/empresa/dashboard-trabajadores/dashboard-trabajadores.component.ts:146</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Comienza un desplazamiento automático repetido.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>direction</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Dirección del desplazamiento (-1 izquierda, 1 derecha).</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="stopScroll"></a>
+                    <span class="name">
+                        <span ><b>stopScroll</b></span>
+                        <a href="#stopScroll"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>stopScroll()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="154"
+                                    class="link-to-prism">src/app/empresa/dashboard-trabajadores/dashboard-trabajadores.component.ts:154</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Detiene el desplazamiento automático.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="submitUpload"></a>
+                    <span class="name">
+                        <span ><b>submitUpload</b></span>
+                        <a href="#submitUpload"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>submitUpload()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="758"
+                                    class="link-to-prism">src/app/empresa/dashboard-trabajadores/dashboard-trabajadores.component.ts:758</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Envía el formulario de subida de nómina al backend.
+Tras subir, recarga la lista de nóminas del trabajador.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="verDetalleTrabajador"></a>
+                    <span class="name">
+                        <span ><b>verDetalleTrabajador</b></span>
+                        <a href="#verDetalleTrabajador"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>verDetalleTrabajador(trabajador: TrabajadorDto)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="344"
+                                    class="link-to-prism">src/app/empresa/dashboard-trabajadores/dashboard-trabajadores.component.ts:344</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Abre el modal de detalle con la información formateada del trabajador.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>trabajador</td>
+                                            <td>
+                                                        <code>TrabajadorDto</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Datos del trabajador a mostrar.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="allTrabajadores"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>allTrabajadores</b></span>
+                        <a href="#allTrabajadores"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>TrabajadorDto[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="57" class="link-to-prism">src/app/empresa/dashboard-trabajadores/dashboard-trabajadores.component.ts:57</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Lista completa de trabajadores cargados.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cardStep"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>cardStep</b></span>
+                        <a href="#cardStep"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>266 * 1</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="124" class="link-to-prism">src/app/empresa/dashboard-trabajadores/dashboard-trabajadores.component.ts:124</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Cantidad de píxeles que se desplaza al hacer scroll horizontal.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="currentTrabajador"></a>
+                    <span class="name">
+                        <span ><b>currentTrabajador</b></span>
+                        <a href="#currentTrabajador"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>TrabajadorDto</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="612" class="link-to-prism">src/app/empresa/dashboard-trabajadores/dashboard-trabajadores.component.ts:612</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Trabajador actualmente seleccionado para gestionar nóminas.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="detalleFields"></a>
+                    <span class="name">
+                        <span ><b>detalleFields</b></span>
+                        <a href="#detalleFields"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>FormlyFieldConfig[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+    {
+      key: &#x27;nombre&#x27;,
+      type: &#x27;input&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        label: &#x27;Nombre&#x27;,
+        type:&#x27;text&#x27;,
+        disabled: true,
+      },
+    },
+    {
+      key: &#x27;apellidos&#x27;,
+      type: &#x27;input&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        label: &#x27;Apellidos&#x27;,
+        type:&#x27;text&#x27;,
+        disabled: true
+      }
+    },
+    {
+      key: &#x27;dni&#x27;,
+      type: &#x27;input&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        label: &#x27;DNI&#x27;,
+        type:&#x27;text&#x27;,
+        disabled: true
+      }
+    },
+    {
+      key: &#x27;naf&#x27;,
+      type: &#x27;input&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        label: &#x27;NAF&#x27;,
+        type:&#x27;text&#x27;,
+        disabled: true
+      }
+    },
+    {
+      key: &#x27;generoText&#x27;,
+      type: &#x27;input&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        label: &#x27;Género&#x27;,
+        type:&#x27;text&#x27;,
+        disabled: true
+      }
+    },
+    {
+      key: &#x27;fechaNacimiento&#x27;,
+      type: &#x27;input&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        label: &#x27;Fecha Nacimiento&#x27;,
+        type:&#x27;text&#x27;,
+        disabled: true
+      }
+    },
+    {
+      key: &#x27;fechaAntiguedad&#x27;,
+      type: &#x27;input&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        label: &#x27;Fecha Antigüedad&#x27;,
+        type:&#x27;text&#x27;,
+        disabled: true
+      }
+    },
+    {
+      key: &#x27;categoria&#x27;,
+      type: &#x27;input&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        label: &#x27;Categoría&#x27;,
+        type:&#x27;text&#x27;,
+        disabled: true
+      }
+    },
+    {
+      key: &#x27;iban&#x27;,
+      type: &#x27;input&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        label: &#x27;IBAN&#x27;,
+        type:&#x27;text&#x27;,
+        disabled: true
+      }
+    },
+    {
+      key: &#x27;telefono&#x27;,
+      type: &#x27;input&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        label: &#x27;Teléfono&#x27;,
+        type:&#x27;text&#x27;,
+        disabled: true
+      }
+    },
+    {
+      key: &#x27;email&#x27;,
+      type: &#x27;input&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        label: &#x27;Email&#x27;,
+        type:&#x27;text&#x27;,
+        disabled: true
+      }
+    },
+
+  ]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="226" class="link-to-prism">src/app/empresa/dashboard-trabajadores/dashboard-trabajadores.component.ts:226</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Campos del formulario de detalle del trabajador.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="detalleForm"></a>
+                    <span class="name">
+                        <span ><b>detalleForm</b></span>
+                        <a href="#detalleForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new FormGroup({})</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="216" class="link-to-prism">src/app/empresa/dashboard-trabajadores/dashboard-trabajadores.component.ts:216</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Formulario reactivo para mostrar detalles del trabajador.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="detalleModel"></a>
+                    <span class="name">
+                        <span ><b>detalleModel</b></span>
+                        <a href="#detalleModel"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{}</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="221" class="link-to-prism">src/app/empresa/dashboard-trabajadores/dashboard-trabajadores.component.ts:221</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Modelo de datos para los detalles del trabajador.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="editarFields"></a>
+                    <span class="name">
+                        <span ><b>editarFields</b></span>
+                        <a href="#editarFields"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>FormlyFieldConfig[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+    {
+      key: &#x27;nombre&#x27;,
+      type: &#x27;input&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        label: &#x27;Nombre&#x27;,
+        type:&#x27;text&#x27;,
+        required: true,
+        hideRequiredMarker: true
+      }
+    },
+    {
+      key: &#x27;apellidos&#x27;,
+      type: &#x27;input&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        label: &#x27;Apellidos&#x27;,
+        type:&#x27;text&#x27;,
+        required: true,
+        hideRequiredMarker: true
+      }
+    },
+    {
+      key: &#x27;dni&#x27;,
+      type: &#x27;input&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        label: &#x27;DNI&#x27;,
+        maxLength:9,
+        type:&#x27;text&#x27;,
+        required: true,
+        hideRequiredMarker: true
+      }
+    },
+    {
+      key: &#x27;naf&#x27;,
+      type: &#x27;input&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        label: &#x27;NAF&#x27;,
+        maxLength: 12,
+        type:&#x27;text&#x27;,
+        required: true,
+        hideRequiredMarker: true
+      }
+    },
+    {
+      key: &#x27;genero&#x27;,
+      type: &#x27;select&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        label: &#x27;Género&#x27;,
+        required: true,
+        hideRequiredMarker: true,
+        options: []
+      },
+      hooks:{
+        onInit: field &#x3D;&gt; {
+          this.generoService.listarGeneros().subscribe({
+            next: response &#x3D;&gt; {
+              field.props!.options &#x3D; response.data!.map(item &#x3D;&gt; ({
+                label: humanizeEnum(item.nombre!),
+                value: item.codigo,
+              }));
+            }
+          })
+        }
+      }
+    },
+    {
+      key: &#x27;fechaNacimiento&#x27;,
+      type: &#x27;input&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        label: &#x27;Fecha Nacimiento&#x27;,
+        type:&#x27;text&#x27;,
+        required: true,
+        hideRequiredMarker: true
+      }
+    },
+    {
+      key: &#x27;fechaAntiguedad&#x27;,
+      type: &#x27;input&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        label: &#x27;Fecha Antigüedad&#x27;,
+        type:&#x27;text&#x27;,
+        required: true,
+        hideRequiredMarker: true
+      }
+    },
+    {
+      key: &#x27;categoria&#x27;,
+      type: &#x27;input&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        label: &#x27;Categoría&#x27;,
+        type:&#x27;text&#x27;,
+        required: true,
+        hideRequiredMarker: true
+      }
+    },
+    {
+      key: &#x27;iban&#x27;,
+      type: &#x27;input&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        label: &#x27;IBAN&#x27;,
+        maxLength: 24,
+        type:&#x27;text&#x27;,
+        required: true,
+        hideRequiredMarker: true
+      }
+    },
+    {
+      key: &#x27;telefono&#x27;,
+      type: &#x27;input&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        label: &#x27;Teléfono&#x27;,
+        maxLength: 9,
+        type:&#x27;text&#x27;,
+        required: true,
+        hideRequiredMarker: true
+      }
+    },
+    {
+      key: &#x27;email&#x27;,
+      type: &#x27;input&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        label: &#x27;Email&#x27;,
+        type:&#x27;text&#x27;,
+        required: true,
+        hideRequiredMarker: true
+      }
+    },
+  ]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="424" class="link-to-prism">src/app/empresa/dashboard-trabajadores/dashboard-trabajadores.component.ts:424</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Campos del formulario de edición del trabajador.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="editarForm"></a>
+                    <span class="name">
+                        <span ><b>editarForm</b></span>
+                        <a href="#editarForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new FormGroup({})</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="414" class="link-to-prism">src/app/empresa/dashboard-trabajadores/dashboard-trabajadores.component.ts:414</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Formulario para editar los datos del trabajador.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="editarModel"></a>
+                    <span class="name">
+                        <span ><b>editarModel</b></span>
+                        <a href="#editarModel"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{}</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="419" class="link-to-prism">src/app/empresa/dashboard-trabajadores/dashboard-trabajadores.component.ts:419</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Modelo de datos para la edición del trabajador.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="eliminarFields"></a>
+                    <span class="name">
+                        <span ><b>eliminarFields</b></span>
+                        <a href="#eliminarFields"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>FormlyFieldConfig[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+    {
+      key: &#x27;email&#x27;,
+      type: &#x27;input&#x27;,
+      props: {
+        type:&#x27;hidden&#x27;
+      }
+    },
+
+
+  ]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="371" class="link-to-prism">src/app/empresa/dashboard-trabajadores/dashboard-trabajadores.component.ts:371</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Campos del formulario para confirmar la eliminación del trabajador.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="eliminarForm"></a>
+                    <span class="name">
+                        <span ><b>eliminarForm</b></span>
+                        <a href="#eliminarForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new FormGroup({})</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="361" class="link-to-prism">src/app/empresa/dashboard-trabajadores/dashboard-trabajadores.component.ts:361</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Formulario para eliminar un trabajador.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="eliminarModel"></a>
+                    <span class="name">
+                        <span ><b>eliminarModel</b></span>
+                        <a href="#eliminarModel"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{}</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="366" class="link-to-prism">src/app/empresa/dashboard-trabajadores/dashboard-trabajadores.component.ts:366</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Modelo para eliminar un trabajador.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fichajesFiltrados"></a>
+                    <span class="name">
+                        <span ><b>fichajesFiltrados</b></span>
+                        <a href="#fichajesFiltrados"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>any[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="790" class="link-to-prism">src/app/empresa/dashboard-trabajadores/dashboard-trabajadores.component.ts:790</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Lista de fichajes filtrados para mostrar en el modal.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="filterFields"></a>
+                    <span class="name">
+                        <span ><b>filterFields</b></span>
+                        <a href="#filterFields"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>FormlyFieldConfig[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+    {
+      key: &#x27;query&#x27;,
+      type: &#x27;input&#x27;,
+      props: {
+        type:&#x27;text&#x27;,
+        placeholder: &#x27;Buscar trabajador...&#x27;,
+        attributes:{
+          class: &#x27;form-control form-control-sm w-100&#x27;
+        }
+      },
+    }
+  ]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="174" class="link-to-prism">src/app/empresa/dashboard-trabajadores/dashboard-trabajadores.component.ts:174</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Campos del formulario de búsqueda.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="filterForm"></a>
+                    <span class="name">
+                        <span ><b>filterForm</b></span>
+                        <a href="#filterForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new FormGroup({})</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="164" class="link-to-prism">src/app/empresa/dashboard-trabajadores/dashboard-trabajadores.component.ts:164</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Formulario reactivo para el filtro de búsqueda.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="filterModel"></a>
+                    <span class="name">
+                        <span ><b>filterModel</b></span>
+                        <a href="#filterModel"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{}</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="169" class="link-to-prism">src/app/empresa/dashboard-trabajadores/dashboard-trabajadores.component.ts:169</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Modelo de datos para el filtro de búsqueda.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="formatDate"></a>
+                    <span class="name">
+                            <span class="modifier">Protected</span>
+                            <span class="modifier">Readonly</span>
+                        <span ><b>formatDate</b></span>
+                        <a href="#formatDate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>formatDate</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="1095" class="link-to-prism">src/app/empresa/dashboard-trabajadores/dashboard-trabajadores.component.ts:1095</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Formateador de fecha reutilizable en la vista.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="modalDetalle"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>modalDetalle</b></span>
+                        <a href="#modalDetalle"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../components/ModalComponent.html" target="_self" >ModalComponent</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;modalDetalle&#x27;)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="211" class="link-to-prism">src/app/empresa/dashboard-trabajadores/dashboard-trabajadores.component.ts:211</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Referencia al modal de detalle del trabajador.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="modalEditar"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>modalEditar</b></span>
+                        <a href="#modalEditar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../components/ModalComponent.html" target="_self" >ModalComponent</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;modalEditar&#x27;)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="567" class="link-to-prism">src/app/empresa/dashboard-trabajadores/dashboard-trabajadores.component.ts:567</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Referencia al modal de edición del trabajador.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="modalEliminar"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>modalEliminar</b></span>
+                        <a href="#modalEliminar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../components/ModalComponent.html" target="_self" >ModalComponent</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;modalEliminar&#x27;)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="356" class="link-to-prism">src/app/empresa/dashboard-trabajadores/dashboard-trabajadores.component.ts:356</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Referencia al modal de confirmación de eliminación.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="modalFichajes"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>modalFichajes</b></span>
+                        <a href="#modalFichajes"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../components/ModalComponent.html" target="_self" >ModalComponent</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;modalFichajes&#x27;)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="785" class="link-to-prism">src/app/empresa/dashboard-trabajadores/dashboard-trabajadores.component.ts:785</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Referencia al modal que muestra los fichajes del trabajador.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="modalNomina"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>modalNomina</b></span>
+                        <a href="#modalNomina"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../components/ModalComponent.html" target="_self" >ModalComponent</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;modalNomina&#x27;)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="607" class="link-to-prism">src/app/empresa/dashboard-trabajadores/dashboard-trabajadores.component.ts:607</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Referencia al modal que muestra las nóminas del trabajador.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="modalNuevoTrabajador"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>modalNuevoTrabajador</b></span>
+                        <a href="#modalNuevoTrabajador"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../components/ModalComponent.html" target="_self" >ModalComponent</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;modalNuevoTrabajador&#x27;)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="885" class="link-to-prism">src/app/empresa/dashboard-trabajadores/dashboard-trabajadores.component.ts:885</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Referencia al modal para crear un nuevo trabajador.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="nombre"></a>
+                    <span class="name">
+                        <span ><b>nombre</b></span>
+                        <a href="#nombre"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="617" class="link-to-prism">src/app/empresa/dashboard-trabajadores/dashboard-trabajadores.component.ts:617</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Nombre completo del trabajador (usado para mostrar en la vista).</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="nominasTrabajador"></a>
+                    <span class="name">
+                        <span ><b>nominasTrabajador</b></span>
+                        <a href="#nominasTrabajador"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/NominaMetadataDto.html" target="_self" >NominaMetadataDto[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="622" class="link-to-prism">src/app/empresa/dashboard-trabajadores/dashboard-trabajadores.component.ts:622</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Lista de nóminas del trabajador actual.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="nuevoFields"></a>
+                    <span class="name">
+                        <span ><b>nuevoFields</b></span>
+                        <a href="#nuevoFields"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>FormlyFieldConfig[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+    {
+      key: &#x27;nombre&#x27;,
+      type: &#x27;input&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        label: &#x27;Nombre&#x27;,
+        type:&#x27;text&#x27;,
+        required: true,
+        hideRequiredMarker: true
+      }
+    },
+    {
+      key: &#x27;apellidos&#x27;,
+      type: &#x27;input&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        label: &#x27;Apellidos&#x27;,
+        type:&#x27;text&#x27;,
+        required: true,
+        hideRequiredMarker: true
+      }
+    },
+    {
+      key: &#x27;dni&#x27;,
+      type: &#x27;input&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        maxLength: 9,
+        label: &#x27;DNI&#x27;,
+        type:&#x27;text&#x27;,
+        required: true,
+        hideRequiredMarker: true
+      }
+    },
+    {
+      key: &#x27;naf&#x27;,
+      type: &#x27;input&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        label: &#x27;NAF&#x27;,
+        maxLength: 12,
+        type:&#x27;text&#x27;,
+        required: true,
+        hideRequiredMarker: true
+      }
+    },
+    {
+      key: &#x27;genero&#x27;,
+      type: &#x27;select&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        label: &#x27;Género&#x27;,
+        required: true,
+        hideRequiredMarker: true,
+        options: [],
+      },
+      hooks:{
+        onInit: field &#x3D;&gt; {
+          this.generoService.listarGeneros().subscribe({
+            next: response &#x3D;&gt; {
+              field.props!.options &#x3D; response.data!.map(item &#x3D;&gt; ({
+                label: humanizeEnum(item.nombre!),
+                value: item.codigo,
+              }));
+            }
+          })
+        }
+      }
+    },
+    {
+      key: &#x27;fechaNacimiento&#x27;,
+      type: &#x27;input&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        label: &#x27;Fecha Nacimiento&#x27;,
+        type:&#x27;date&#x27;,
+        required: true,
+        hideRequiredMarker: true
+      }
+    },
+    {
+      key: &#x27;fechaAntiguedad&#x27;,
+      type: &#x27;input&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        label: &#x27;Fecha Antigüedad&#x27;,
+        type:&#x27;date&#x27;,
+        required: true,
+        hideRequiredMarker: true
+      }
+    },
+    {
+      key: &#x27;categoria&#x27;,
+      type: &#x27;input&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        label: &#x27;Categoría&#x27;,
+        type:&#x27;text&#x27;,
+        required: true,
+        hideRequiredMarker: true
+      }
+    },
+    {
+      key: &#x27;iban&#x27;,
+      type: &#x27;input&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        label: &#x27;IBAN&#x27;,
+        maxLength: 24,
+        type:&#x27;text&#x27;,
+        required: true,
+        hideRequiredMarker: true
+      }
+    },
+    {
+      key: &#x27;telefono&#x27;,
+      type: &#x27;input&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        label: &#x27;Teléfono&#x27;,
+        maxLength: 9,
+        type:&#x27;text&#x27;,
+        required: true,
+        hideRequiredMarker: true
+      }
+    },
+    {
+      key: &#x27;email&#x27;,
+      type: &#x27;input&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        label: &#x27;Email&#x27;,
+        type:&#x27;text&#x27;,
+        required: true,
+        hideRequiredMarker: true
+      }
+    },
+    {
+      key: &#x27;password&#x27;,
+      type: &#x27;input&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        label: &#x27;Contraseña&#x27;,
+        type:&#x27;password&#x27;,
+        required: true,
+        hideRequiredMarker: true
+      }
+    },
+
+  ]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="900" class="link-to-prism">src/app/empresa/dashboard-trabajadores/dashboard-trabajadores.component.ts:900</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Campos del formulario para alta de nuevo trabajador.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="nuevoForm"></a>
+                    <span class="name">
+                        <span ><b>nuevoForm</b></span>
+                        <a href="#nuevoForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new FormGroup({})</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="890" class="link-to-prism">src/app/empresa/dashboard-trabajadores/dashboard-trabajadores.component.ts:890</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Formulario reactivo para crear un nuevo trabajador.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="nuevoModel"></a>
+                    <span class="name">
+                        <span ><b>nuevoModel</b></span>
+                        <a href="#nuevoModel"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{}</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="895" class="link-to-prism">src/app/empresa/dashboard-trabajadores/dashboard-trabajadores.component.ts:895</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Modelo de datos para el nuevo trabajador.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="scrollArea"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>scrollArea</b></span>
+                        <a href="#scrollArea"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>ElementRef&lt;HTMLElement&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;scrollArea&#x27;, {static: false})<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="119" class="link-to-prism">src/app/empresa/dashboard-trabajadores/dashboard-trabajadores.component.ts:119</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Elemento del DOM que contiene las tarjetas de trabajadores con scroll horizontal.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="scrollInterval"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>scrollInterval</b></span>
+                        <a href="#scrollInterval"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="129" class="link-to-prism">src/app/empresa/dashboard-trabajadores/dashboard-trabajadores.component.ts:129</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Intervalo activo para auto-scroll.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="showUploadForm"></a>
+                    <span class="name">
+                        <span ><b>showUploadForm</b></span>
+                        <a href="#showUploadForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="708" class="link-to-prism">src/app/empresa/dashboard-trabajadores/dashboard-trabajadores.component.ts:708</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Bandera que indica si se muestra el formulario de subida de nómina.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="trabajadorEditado"></a>
+                    <span class="name">
+                        <span ><b>trabajadorEditado</b></span>
+                        <a href="#trabajadorEditado"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>TrabajadorDto</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="572" class="link-to-prism">src/app/empresa/dashboard-trabajadores/dashboard-trabajadores.component.ts:572</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Trabajador actualmente seleccionado para edición.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="trabajadores"></a>
+                    <span class="name">
+                        <span ><b>trabajadores</b></span>
+                        <a href="#trabajadores"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>any[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">src/app/empresa/dashboard-trabajadores/dashboard-trabajadores.component.ts:52</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Lista visible de trabajadores.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="uploadForm"></a>
+                    <span class="name">
+                        <span ><b>uploadForm</b></span>
+                        <a href="#uploadForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>FormGroup</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="713" class="link-to-prism">src/app/empresa/dashboard-trabajadores/dashboard-trabajadores.component.ts:713</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Formulario reactivo para subir una nueva nómina.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-accessors">
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="mensajeBoton"></a>
+                        <span class="name"><b>mensajeBoton</b><a href="#mensajeBoton"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>mensajeBoton()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="728" class="link-to-prism">src/app/empresa/dashboard-trabajadores/dashboard-trabajadores.component.ts:728</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Mensaje dinámico del botón que alterna la vista (subir/consultar nóminas).</p>
+</div>
+
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="iconoBoton"></a>
+                        <span class="name"><b>iconoBoton</b><a href="#iconoBoton"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>iconoBoton()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="735" class="link-to-prism">src/app/empresa/dashboard-trabajadores/dashboard-trabajadores.component.ts:735</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Icono dinámico del botón que alterna la vista (subir/consultar nóminas).</p>
+</div>
+
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+
+            </tbody>
+        </table>
+</section>
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {AfterViewInit, Component, ElementRef, OnInit, ViewChild} from &#x27;@angular/core&#x27;;
+import {
+  EmpresasService,
+  GenerosService, IdRequestDto, NominaMetadataDto,
+  NominasService,
+  TrabajadorDto
+} from &#x27;../../../openapi&#x27;;
+import {NgClass, NgForOf, NgIf} from &#x27;@angular/common&#x27;;
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators} from &#x27;@angular/forms&#x27;;
+import {FormlyFieldConfig, FormlyModule} from &#x27;@ngx-formly/core&#x27;;
+import {debounceTime, distinctUntilChanged} from &#x27;rxjs&#x27;;
+import {ModalComponent} from &#x27;../../core/modal/modal.component&#x27;;
+import { trigger, style, animate, transition,} from &#x27;@angular/animations&#x27;;
+import {HttpClient, HttpResponse} from &quot;@angular/common/http&quot;;
+import {MatSnackBar} from &quot;@angular/material/snack-bar&quot;;
+import {formatDate, humanizeEnum} from &quot;../../core/library/library&quot;;
+
+/**
+ * Componente que gestiona el dashboard de trabajadores.
+ * Permite visualizar, buscar, editar, eliminar y consultar nóminas.
+ */
+@Component({
+  selector: &#x27;app-dashboard-trabajadores&#x27;,
+  standalone: true,
+  templateUrl: &#x27;./dashboard-trabajadores.component.html&#x27;,
+  imports: [
+    NgForOf,
+    ReactiveFormsModule,
+    FormlyModule,
+    ModalComponent,
+    NgIf,
+    NgClass
+  ],
+  styleUrl: &#x27;./dashboard-trabajadores.component.scss&#x27;,
+  animations: [
+    trigger(&#x27;fadeAlert&#x27;, [
+      transition(&#x27;:enter&#x27;, [
+        style({ opacity: 0 }),
+        animate(&#x27;300ms ease-out&#x27;, style({ opacity: 1 })),
+      ]),
+      transition(&#x27;:leave&#x27;, [
+        animate(&#x27;300ms ease-in&#x27;, style({ opacity: 0 })),
+      ]),
+    ]),
+  ],
+})
+export class DashboardTrabajadoresComponent implements OnInit, AfterViewInit {
+
+  /**
+   * Lista visible de trabajadores.
+   */
+  trabajadores: any[] &#x3D; [];
+
+  /**
+   * Lista completa de trabajadores cargados.
+   */
+  private allTrabajadores: TrabajadorDto[] &#x3D; [];
+
+  constructor(private empresaService: EmpresasService, private generoService: GenerosService, private nominaService:NominasService,
+              private fb: FormBuilder, private http: HttpClient, private snackBar: MatSnackBar) {
+    this.uploadForm &#x3D; this.fb.group({
+      trabajadorId: [null, Validators.required],
+      periodo: [null, Validators.required],
+      file: [null, Validators.required],
+    });
+  }
+
+  /**
+   * Hook de inicialización. Carga la lista de trabajadores.
+   */
+  ngOnInit(): void {
+    this.cargarTrabajadores();
+  }
+
+  /**
+   * Carga la lista de trabajadores desde el backend.
+   * Ordena por fecha de antigüedad de forma descendente.
+   */
+  private cargarTrabajadores() {
+    this.empresaService.trabajadoresPorEmpresa().subscribe(resp &#x3D;&gt; {
+      const data &#x3D; resp.data ?? [];
+
+      this.allTrabajadores &#x3D; data.sort((a, b) &#x3D;&gt; {
+        const timeA &#x3D; a.fechaAntiguedad
+          ? new Date(a.fechaAntiguedad).getTime()
+          : 0;
+        const timeB &#x3D; b.fechaAntiguedad
+          ? new Date(b.fechaAntiguedad).getTime()
+          : 0;
+        return timeB - timeA;
+      });
+
+      // Copiamos al array de visualización
+      this.trabajadores &#x3D; [...this.allTrabajadores];
+    });
+  }
+
+  /**
+   * Hook que se ejecuta después de que la vista ha sido inicializada.
+   * Configura listeners de búsqueda y scroll horizontal.
+   */
+  ngAfterViewInit(): void {
+    // Ahora sí existe el control &#x27;query&#x27;
+    const queryControl &#x3D; this.filterForm.get(&#x27;query&#x27;);
+    if (queryControl) {
+      queryControl.valueChanges
+        .pipe(
+          debounceTime(200),
+          distinctUntilChanged()
+        )
+        .subscribe(() &#x3D;&gt; this.onSearch());
+    }
+    this.addScrollListeners();
+  }
+
+  /**
+   * Elemento del DOM que contiene las tarjetas de trabajadores con scroll horizontal.
+   */
+  @ViewChild(&#x27;scrollArea&#x27;, {static: false}) scrollArea!: ElementRef&lt;HTMLElement&gt;;
+
+  /**
+   * Cantidad de píxeles que se desplaza al hacer scroll horizontal.
+   */
+  private cardStep &#x3D; 266 * 1;
+
+  /**
+   * Intervalo activo para auto-scroll.
+   */
+  private scrollInterval: any;
+
+  /**
+   * Realiza un desplazamiento horizontal en la dirección indicada.
+   * @param direction Dirección del desplazamiento (-1 izquierda, 1 derecha).
+   */
+  scroll(direction: number) {
+    this.scrollArea.nativeElement.scrollBy({
+      left: direction * this.cardStep,
+      behavior: &#x27;smooth&#x27;
+    });
+  }
+
+  /**
+   * Comienza un desplazamiento automático repetido.
+   * @param direction Dirección del desplazamiento (-1 izquierda, 1 derecha).
+   */
+  startScroll(direction: number) {
+    this.scroll(direction);
+    this.scrollInterval &#x3D; setInterval(() &#x3D;&gt; this.scroll(direction), 150);
+  }
+
+  /**
+   * Detiene el desplazamiento automático.
+   */
+  stopScroll() {
+    if (this.scrollInterval) {
+      clearInterval(this.scrollInterval);
+      this.scrollInterval &#x3D; null;
+    }
+  }
+
+  /**
+   * Formulario reactivo para el filtro de búsqueda.
+   */
+  filterForm &#x3D; new FormGroup({});
+
+  /**
+   * Modelo de datos para el filtro de búsqueda.
+   */
+  filterModel: any &#x3D; {};
+
+  /**
+   * Campos del formulario de búsqueda.
+   */
+  filterFields: FormlyFieldConfig[] &#x3D; [
+    {
+      key: &#x27;query&#x27;,
+      type: &#x27;input&#x27;,
+      props: {
+        type:&#x27;text&#x27;,
+        placeholder: &#x27;Buscar trabajador...&#x27;,
+        attributes:{
+          class: &#x27;form-control form-control-sm w-100&#x27;
+        }
+      },
+    }
+  ];
+
+  /**
+   * Filtra la lista de trabajadores según el texto ingresado.
+   */
+  onSearch() {
+    const q &#x3D; (this.filterModel.query ?? &#x27;&#x27;).toString().trim().toLowerCase();
+    if (!q) {
+      this.trabajadores &#x3D; [...this.allTrabajadores];
+      return;
+    }
+    this.trabajadores &#x3D; this.allTrabajadores.filter(t &#x3D;&gt; {
+      const campos &#x3D; [
+        t.nombre, t.apellidos, t.dni, t.naf,
+        t.categoria, t.email, t.iban,
+        t.genero, t.rol,
+        t.telefono, t.id
+      ].filter(v &#x3D;&gt; v !&#x3D; null) as any[];
+      return campos.some(c &#x3D;&gt; c.toString().toLowerCase().includes(q));
+    });
+  }
+
+  /**
+   * Referencia al modal de detalle del trabajador.
+   */
+  @ViewChild(&#x27;modalDetalle&#x27;) modalDetalle!: ModalComponent;
+
+  /**
+   * Formulario reactivo para mostrar detalles del trabajador.
+   */
+  detalleForm &#x3D; new FormGroup({});
+
+  /**
+   * Modelo de datos para los detalles del trabajador.
+   */
+  detalleModel: any &#x3D; {};
+
+  /**
+   * Campos del formulario de detalle del trabajador.
+   */
+  detalleFields: FormlyFieldConfig[] &#x3D; [
+    {
+      key: &#x27;nombre&#x27;,
+      type: &#x27;input&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        label: &#x27;Nombre&#x27;,
+        type:&#x27;text&#x27;,
+        disabled: true,
+      },
+    },
+    {
+      key: &#x27;apellidos&#x27;,
+      type: &#x27;input&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        label: &#x27;Apellidos&#x27;,
+        type:&#x27;text&#x27;,
+        disabled: true
+      }
+    },
+    {
+      key: &#x27;dni&#x27;,
+      type: &#x27;input&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        label: &#x27;DNI&#x27;,
+        type:&#x27;text&#x27;,
+        disabled: true
+      }
+    },
+    {
+      key: &#x27;naf&#x27;,
+      type: &#x27;input&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        label: &#x27;NAF&#x27;,
+        type:&#x27;text&#x27;,
+        disabled: true
+      }
+    },
+    {
+      key: &#x27;generoText&#x27;,
+      type: &#x27;input&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        label: &#x27;Género&#x27;,
+        type:&#x27;text&#x27;,
+        disabled: true
+      }
+    },
+    {
+      key: &#x27;fechaNacimiento&#x27;,
+      type: &#x27;input&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        label: &#x27;Fecha Nacimiento&#x27;,
+        type:&#x27;text&#x27;,
+        disabled: true
+      }
+    },
+    {
+      key: &#x27;fechaAntiguedad&#x27;,
+      type: &#x27;input&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        label: &#x27;Fecha Antigüedad&#x27;,
+        type:&#x27;text&#x27;,
+        disabled: true
+      }
+    },
+    {
+      key: &#x27;categoria&#x27;,
+      type: &#x27;input&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        label: &#x27;Categoría&#x27;,
+        type:&#x27;text&#x27;,
+        disabled: true
+      }
+    },
+    {
+      key: &#x27;iban&#x27;,
+      type: &#x27;input&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        label: &#x27;IBAN&#x27;,
+        type:&#x27;text&#x27;,
+        disabled: true
+      }
+    },
+    {
+      key: &#x27;telefono&#x27;,
+      type: &#x27;input&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        label: &#x27;Teléfono&#x27;,
+        type:&#x27;text&#x27;,
+        disabled: true
+      }
+    },
+    {
+      key: &#x27;email&#x27;,
+      type: &#x27;input&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        label: &#x27;Email&#x27;,
+        type:&#x27;text&#x27;,
+        disabled: true
+      }
+    },
+
+  ];
+
+  /**
+   * Abre el modal de detalle con la información formateada del trabajador.
+   * @param trabajador Datos del trabajador a mostrar.
+   */
+  verDetalleTrabajador(trabajador:TrabajadorDto) {
+    let trabajadorModal: any &#x3D; {...trabajador}
+    trabajadorModal.generoText &#x3D; humanizeEnum(trabajador.genero!);
+    trabajadorModal.fechaNacimiento &#x3D; formatDate(trabajador.fechaNacimiento!);
+    trabajadorModal.fechaAntiguedad &#x3D; formatDate(trabajador.fechaAntiguedad!);
+    this.detalleModel &#x3D; trabajadorModal;
+    this.modalDetalle.open();
+  }
+
+  /**
+   * Referencia al modal de confirmación de eliminación.
+   */
+  @ViewChild(&#x27;modalEliminar&#x27;) modalEliminar!: ModalComponent;
+
+  /**
+   * Formulario para eliminar un trabajador.
+   */
+  eliminarForm &#x3D; new FormGroup({});
+
+  /**
+   * Modelo para eliminar un trabajador.
+   */
+  eliminarModel: any &#x3D; {};
+
+  /**
+   * Campos del formulario para confirmar la eliminación del trabajador.
+   */
+  eliminarFields: FormlyFieldConfig[] &#x3D; [
+    {
+      key: &#x27;email&#x27;,
+      type: &#x27;input&#x27;,
+      props: {
+        type:&#x27;hidden&#x27;
+      }
+    },
+
+
+  ];
+
+  /**
+   * Abre el modal de eliminación para un trabajador específico.
+   * @param trabajador Trabajador seleccionado para eliminar.
+   */
+  confirmarEliminacion(trabajador: TrabajadorDto) {
+    this.eliminarModel.email &#x3D; trabajador.email;
+    this.modalEliminar.open();
+  }
+
+  /**
+   * Elimina al trabajador seleccionado y actualiza la lista.
+   */
+  eliminarTrabajador(){
+    this.empresaService.bajaTrabajador(this.eliminarModel).subscribe({
+      next: data &#x3D;&gt; {
+        this.empresaService.trabajadoresPorEmpresa().subscribe(resp &#x3D;&gt; {
+          this.allTrabajadores &#x3D; resp.data ?? [];
+          this.trabajadores &#x3D; [...this.allTrabajadores];
+          this.modalEliminar.close();
+          this.snackbarok(&#x27;Se ha eliminado correctamente&#x27;);
+        });
+      },
+      error: err &#x3D;&gt; {
+        this.snackbarnok(&#x27;Hubo un error al eliminar&#x27;);
+      }
+    })
+  }
+
+  /**
+   * Formulario para editar los datos del trabajador.
+   */
+  editarForm &#x3D; new FormGroup({});
+
+  /**
+   * Modelo de datos para la edición del trabajador.
+   */
+  editarModel: any &#x3D; {};
+
+  /**
+   * Campos del formulario de edición del trabajador.
+   */
+  editarFields: FormlyFieldConfig[] &#x3D; [
+    {
+      key: &#x27;nombre&#x27;,
+      type: &#x27;input&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        label: &#x27;Nombre&#x27;,
+        type:&#x27;text&#x27;,
+        required: true,
+        hideRequiredMarker: true
+      }
+    },
+    {
+      key: &#x27;apellidos&#x27;,
+      type: &#x27;input&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        label: &#x27;Apellidos&#x27;,
+        type:&#x27;text&#x27;,
+        required: true,
+        hideRequiredMarker: true
+      }
+    },
+    {
+      key: &#x27;dni&#x27;,
+      type: &#x27;input&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        label: &#x27;DNI&#x27;,
+        maxLength:9,
+        type:&#x27;text&#x27;,
+        required: true,
+        hideRequiredMarker: true
+      }
+    },
+    {
+      key: &#x27;naf&#x27;,
+      type: &#x27;input&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        label: &#x27;NAF&#x27;,
+        maxLength: 12,
+        type:&#x27;text&#x27;,
+        required: true,
+        hideRequiredMarker: true
+      }
+    },
+    {
+      key: &#x27;genero&#x27;,
+      type: &#x27;select&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        label: &#x27;Género&#x27;,
+        required: true,
+        hideRequiredMarker: true,
+        options: []
+      },
+      hooks:{
+        onInit: field &#x3D;&gt; {
+          this.generoService.listarGeneros().subscribe({
+            next: response &#x3D;&gt; {
+              field.props!.options &#x3D; response.data!.map(item &#x3D;&gt; ({
+                label: humanizeEnum(item.nombre!),
+                value: item.codigo,
+              }));
+            }
+          })
+        }
+      }
+    },
+    {
+      key: &#x27;fechaNacimiento&#x27;,
+      type: &#x27;input&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        label: &#x27;Fecha Nacimiento&#x27;,
+        type:&#x27;text&#x27;,
+        required: true,
+        hideRequiredMarker: true
+      }
+    },
+    {
+      key: &#x27;fechaAntiguedad&#x27;,
+      type: &#x27;input&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        label: &#x27;Fecha Antigüedad&#x27;,
+        type:&#x27;text&#x27;,
+        required: true,
+        hideRequiredMarker: true
+      }
+    },
+    {
+      key: &#x27;categoria&#x27;,
+      type: &#x27;input&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        label: &#x27;Categoría&#x27;,
+        type:&#x27;text&#x27;,
+        required: true,
+        hideRequiredMarker: true
+      }
+    },
+    {
+      key: &#x27;iban&#x27;,
+      type: &#x27;input&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        label: &#x27;IBAN&#x27;,
+        maxLength: 24,
+        type:&#x27;text&#x27;,
+        required: true,
+        hideRequiredMarker: true
+      }
+    },
+    {
+      key: &#x27;telefono&#x27;,
+      type: &#x27;input&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        label: &#x27;Teléfono&#x27;,
+        maxLength: 9,
+        type:&#x27;text&#x27;,
+        required: true,
+        hideRequiredMarker: true
+      }
+    },
+    {
+      key: &#x27;email&#x27;,
+      type: &#x27;input&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        label: &#x27;Email&#x27;,
+        type:&#x27;text&#x27;,
+        required: true,
+        hideRequiredMarker: true
+      }
+    },
+  ];
+
+  /**
+   * Referencia al modal de edición del trabajador.
+   */
+  @ViewChild(&#x27;modalEditar&#x27;) modalEditar!: ModalComponent;
+
+  /**
+   * Trabajador actualmente seleccionado para edición.
+   */
+  trabajadorEditado!: TrabajadorDto;
+
+  /**
+   * Abre el modal de edición con los datos del trabajador seleccionado.
+   * @param trabajador Trabajador que se va a editar.
+   */
+  openModalEditar(trabajador: TrabajadorDto) {
+    this.trabajadorEditado &#x3D; {...trabajador}
+    this.editarModel &#x3D; this.trabajadorEditado;
+    this.modalEditar.open();
+  }
+
+  /**
+   * Envía los datos editados del trabajador al backend para actualizarlo.
+   * Tras actualizar, recarga la lista de trabajadores.
+   */
+  actualizarTrabajador() {
+    this.empresaService.actualizarTrabajador1(this.trabajadorEditado).subscribe({
+      next: resp &#x3D;&gt; {
+        this.empresaService.trabajadoresPorEmpresa().subscribe(resp &#x3D;&gt; {
+          this.allTrabajadores &#x3D; resp.data ?? [];
+          this.trabajadores &#x3D; [...this.allTrabajadores];
+          this.modalEditar.close();
+          this.snackbarok(&#x27;Se ha actualizado correctamente&#x27;)
+        });
+      },
+      error: err &#x3D;&gt; {
+        this.snackbarnok(&#x27;Hubo un error al actualizar&#x27;);
+      }
+    })
+  }
+
+  /**
+   * Referencia al modal que muestra las nóminas del trabajador.
+   */
+  @ViewChild(&#x27;modalNomina&#x27;) modalNomina!: ModalComponent;
+
+  /**
+   * Trabajador actualmente seleccionado para gestionar nóminas.
+   */
+  currentTrabajador!: TrabajadorDto;
+
+  /**
+   * Nombre completo del trabajador (usado para mostrar en la vista).
+   */
+  nombre: string &#x3D; &#x27;&#x27;;
+
+  /**
+   * Lista de nóminas del trabajador actual.
+   */
+  nominasTrabajador: NominaMetadataDto[] &#x3D; [];
+
+  /**
+   * Abre el modal de nóminas para el trabajador seleccionado.
+   * Carga las nóminas desde el backend.
+   * @param trabajador Trabajador seleccionado.
+   */
+  openModalNomina(trabajador: TrabajadorDto) {
+    this.currentTrabajador &#x3D; {...trabajador}
+    this.nombre &#x3D; trabajador.nombre! + &#x27; &#x27; + trabajador.apellidos!;
+    this.nominaService.listarNominasDeTrabajador(this.currentTrabajador).subscribe({
+      next: resp &#x3D;&gt; {
+        this.nominasTrabajador &#x3D; resp.data ?? [];
+        this.modalNomina.open();
+      },
+      error: err &#x3D;&gt; {
+        this.snackbarnok(&#x27;Hubo un error al buscar las nóminas&#x27;);
+      }
+    })
+    this.uploadForm.patchValue({ trabajadorId: trabajador.id });
+    this.showUploadForm &#x3D; false;
+  }
+
+  /**
+   * Descarga la nómina seleccionada como archivo PDF.
+   * @param nomina Nómina a descargar.
+   */
+  descargarNomina(nomina: NominaMetadataDto) {
+
+    const payload: IdRequestDto &#x3D; { id: nomina.id! };
+
+    const url &#x3D; &#x60;${this.nominaService.configuration.basePath}/nominas/descargar&#x60;;
+
+    this.http.post(url, payload, {
+      responseType: &#x27;blob&#x27;,
+      observe: &#x27;response&#x27;
+    }).subscribe({
+      next: (resp: HttpResponse&lt;Blob&gt;) &#x3D;&gt; {
+        const contentDisp &#x3D; resp.headers.get(&#x27;content-disposition&#x27;) || &#x27;&#x27;;
+        const match &#x3D; /filename[^;&#x3D;\n]*&#x3D;(([&#x27;&quot;]).*?\2|[^;\n]*)/.exec(contentDisp);
+        const filename &#x3D; match ? match[1].replace(/[&#x27;&quot;]/g, &#x27;&#x27;) : &#x60;nomina-${nomina.periodo}-${this.currentTrabajador.nombre + &#x27;-&#x27; + this.currentTrabajador.apellidos}.pdf&#x60;;
+
+        const blob &#x3D; new Blob([resp.body!], { type: resp.body!.type });
+        const urlBlob &#x3D; window.URL.createObjectURL(blob);
+
+        const a &#x3D; document.createElement(&#x27;a&#x27;);
+        a.href &#x3D; urlBlob;
+        a.download &#x3D; filename;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+
+        window.URL.revokeObjectURL(urlBlob);
+      },
+      error: err &#x3D;&gt; {
+        this.snackbarnok(&#x27;Hubo un error con la descarga&#x27;);
+      }
+    });
+  }
+
+
+  /**
+   * Elimina la nómina seleccionada del trabajador.
+   * Tras eliminar, recarga la lista de nóminas.
+   * @param nomina Nómina a eliminar.
+   */
+  eliminarNomina(nomina: NominaMetadataDto) {
+    this.nominaService.eliminarNomina(nomina).subscribe({
+      next: resp &#x3D;&gt; {
+        this.nominaService.listarNominasDeTrabajador(this.currentTrabajador).subscribe({
+          next: resp &#x3D;&gt; {
+            this.nominasTrabajador &#x3D; resp.data ?? [];
+            this.snackbarok(&#x27;Se ha eliminado correctamente&#x27;);
+          },
+          error: err &#x3D;&gt; {
+            this.snackbarnok(&#x27;Hubo al recargar el listado de nóminas&#x27;);
+          }
+        })
+      },
+      error: err &#x3D;&gt; {this.snackbarnok(&#x27;Hubo un error al eliminar&#x27;);}
+    })
+  }
+
+  /**
+   * Bandera que indica si se muestra el formulario de subida de nómina.
+   */
+  showUploadForm: boolean &#x3D; false;
+
+  /**
+   * Formulario reactivo para subir una nueva nómina.
+   */
+  uploadForm: FormGroup;
+
+  /**
+   * Alterna entre mostrar el formulario de subida de nómina o consultar las nóminas.
+   * También resetea el formulario y precarga el ID del trabajador actual.
+   */
+  cambiarFormularioSubirNomina() {
+    this.uploadForm.reset();
+    this.uploadForm.patchValue({ trabajadorId: this.currentTrabajador.id });
+    this.showUploadForm &#x3D; !this.showUploadForm;
+  }
+
+  /**
+   * Mensaje dinámico del botón que alterna la vista (subir/consultar nóminas).
+   */
+  get mensajeBoton(): string {
+    return this.showUploadForm ? &#x27;Consultar nóminas&#x27; : &#x27;Subir nómina&#x27;;
+  }
+
+  /**
+   * Icono dinámico del botón que alterna la vista (subir/consultar nóminas).
+   */
+  get iconoBoton(): string {
+    return this.showUploadForm
+      ? &#x27;bi bi-file-earmark-text&#x27;
+      : &#x27;bi bi-file-earmark-arrow-up&#x27;;
+  }
+
+  /**
+   * Captura el cambio en el input de archivo y actualiza el formulario.
+   * @param event Evento del input file.
+   */
+  onFileChange(event: Event) {
+    const input &#x3D; event.target as HTMLInputElement;
+    if (!input.files || input.files.length &#x3D;&#x3D;&#x3D; 0) {
+      this.uploadForm.patchValue({ file: null });
+      return;
+    }
+    this.uploadForm.patchValue({ file: input.files[0] });
+  }
+
+  /**
+   * Envía el formulario de subida de nómina al backend.
+   * Tras subir, recarga la lista de nóminas del trabajador.
+   */
+  submitUpload() {
+    if (this.uploadForm.invalid) {
+      return;
+    }
+    const { trabajadorId, periodo, file } &#x3D; this.uploadForm.value;
+
+    this.nominaService.subirNomina(trabajadorId, periodo, file).subscribe({
+      next: () &#x3D;&gt; {
+        this.nominaService.listarNominasDeTrabajador(this.currentTrabajador).subscribe({
+          next: (resp) &#x3D;&gt; {
+            this.nominasTrabajador &#x3D; resp.data ?? [];
+            this.snackbarok(&#x27;Nómina guardada&#x27;);
+          },
+          error: err &#x3D;&gt; {this.snackbarnok(&#x27;Hubo un error al recargar las nóminas&#x27;);}
+        });
+        this.showUploadForm &#x3D; false;
+      },
+      error: (err) &#x3D;&gt; {
+        this.modalNomina.close();
+        this.snackbarnok(err.error.data);
+      }
+    });
+  }
+
+  /**
+   * Referencia al modal que muestra los fichajes del trabajador.
+   */
+  @ViewChild(&#x27;modalFichajes&#x27;) modalFichajes!: ModalComponent;
+
+  /**
+   * Lista de fichajes filtrados para mostrar en el modal.
+   */
+  fichajesFiltrados: any[] &#x3D; [];
+
+  /**
+   * Abre el modal de fichajes para un trabajador específico.
+   * Recupera, filtra, ordena y formatea los 10 fichajes más recientes.
+   * @param t Trabajador seleccionado.
+   */
+  openModalFichajes(t: TrabajadorDto) {
+    this.nombre &#x3D; t.nombre + &#x27; &#x27; + t.apellidos;
+    this.empresaService.fichajesPorEmpresa().subscribe({
+      next: resp &#x3D;&gt; {
+        const data &#x3D; resp.data ?? [];
+
+        const recientes &#x3D; data
+          .filter(f &#x3D;&gt; f.trabajador?.id &#x3D;&#x3D;&#x3D; t.id)
+          .sort((a, b) &#x3D;&gt;
+            new Date(b.fechaInicio!).getTime() - new Date(a.fechaInicio!).getTime()
+          )
+          .slice(0, 10);
+
+        const formatoFecha &#x3D; (iso: string) &#x3D;&gt; {
+          const d &#x3D; new Date(iso);
+          const fecha &#x3D; d.toLocaleDateString(&#x27;es-ES&#x27;, {
+            day: &#x27;2-digit&#x27;,
+            month: &#x27;2-digit&#x27;,
+            year: &#x27;numeric&#x27;
+          });
+          const hora &#x3D; d.toLocaleTimeString(&#x27;es-ES&#x27;, {
+            hour: &#x27;2-digit&#x27;,
+            minute: &#x27;2-digit&#x27;
+          });
+          return &#x60;${fecha} ${hora}&#x60;;
+        };
+
+        const formatoDuracion &#x3D; (inicioIso: string, finIso?: string) &#x3D;&gt; {
+          const ini &#x3D; new Date(inicioIso).getTime();
+          const fin &#x3D; finIso ? new Date(finIso).getTime() : Date.now();
+          let diff &#x3D; fin - ini;
+          const hrs &#x3D; Math.floor(diff / 3_600_000);
+          diff %&#x3D; 3_600_000;
+          const mins &#x3D; Math.floor(diff / 60_000);
+          return &#x60;${hrs} h ${mins.toString().padStart(2, &#x27;0&#x27;)} m&#x60;;
+        };
+
+        this.fichajesFiltrados &#x3D; recientes.map(f &#x3D;&gt; ({
+          ...f,
+          fechaInicioFmt: formatoFecha(f.fechaInicio!),
+          fechaFinFmt: f.fechaFin ? formatoFecha(f.fechaFin) : &#x27;—&#x27;,
+          tiempoTrabajado: formatoDuracion(f.fechaInicio!, f.fechaFin)
+        }));
+        this.modalFichajes.open();
+      },
+      error: err &#x3D;&gt; {
+        this.snackbarnok(&#x27;Hubo un error al recuperar los fichajes&#x27;);
+      }
+    });
+  }
+
+  /**
+   * Muestra un mensaje de éxito con el snackbar.
+   * @param mensaje Texto del mensaje.
+   */
+  snackbarok(mensaje:string){
+    this.snackBar.open(
+      mensaje,
+      &#x27;&#x27;,
+      {
+        duration: 3000,
+        horizontalPosition: &#x27;right&#x27;,
+        verticalPosition: &#x27;bottom&#x27;,
+        panelClass: [&#x27;snackbar-success&#x27;],
+      }
+    );
+  }
+
+  /**
+   * Muestra un mensaje de error con el snackbar.
+   * @param mensaje Texto del mensaje.
+   */
+  snackbarnok(mensaje:string){
+    this.snackBar.open(
+      mensaje,
+      &#x27;&#x27;,
+      {
+        duration: 3000,
+        horizontalPosition: &#x27;right&#x27;,
+        verticalPosition: &#x27;bottom&#x27;,
+        panelClass: [&#x27;snackbar-error&#x27;],
+      }
+    );
+  }
+
+  /**
+   * Referencia al modal para crear un nuevo trabajador.
+   */
+  @ViewChild(&#x27;modalNuevoTrabajador&#x27;) modalNuevoTrabajador!: ModalComponent;
+
+  /**
+   * Formulario reactivo para crear un nuevo trabajador.
+   */
+  nuevoForm &#x3D; new FormGroup({});
+
+  /**
+   * Modelo de datos para el nuevo trabajador.
+   */
+  nuevoModel: any &#x3D; {};
+
+  /**
+   * Campos del formulario para alta de nuevo trabajador.
+   */
+  nuevoFields: FormlyFieldConfig[] &#x3D; [
+    {
+      key: &#x27;nombre&#x27;,
+      type: &#x27;input&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        label: &#x27;Nombre&#x27;,
+        type:&#x27;text&#x27;,
+        required: true,
+        hideRequiredMarker: true
+      }
+    },
+    {
+      key: &#x27;apellidos&#x27;,
+      type: &#x27;input&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        label: &#x27;Apellidos&#x27;,
+        type:&#x27;text&#x27;,
+        required: true,
+        hideRequiredMarker: true
+      }
+    },
+    {
+      key: &#x27;dni&#x27;,
+      type: &#x27;input&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        maxLength: 9,
+        label: &#x27;DNI&#x27;,
+        type:&#x27;text&#x27;,
+        required: true,
+        hideRequiredMarker: true
+      }
+    },
+    {
+      key: &#x27;naf&#x27;,
+      type: &#x27;input&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        label: &#x27;NAF&#x27;,
+        maxLength: 12,
+        type:&#x27;text&#x27;,
+        required: true,
+        hideRequiredMarker: true
+      }
+    },
+    {
+      key: &#x27;genero&#x27;,
+      type: &#x27;select&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        label: &#x27;Género&#x27;,
+        required: true,
+        hideRequiredMarker: true,
+        options: [],
+      },
+      hooks:{
+        onInit: field &#x3D;&gt; {
+          this.generoService.listarGeneros().subscribe({
+            next: response &#x3D;&gt; {
+              field.props!.options &#x3D; response.data!.map(item &#x3D;&gt; ({
+                label: humanizeEnum(item.nombre!),
+                value: item.codigo,
+              }));
+            }
+          })
+        }
+      }
+    },
+    {
+      key: &#x27;fechaNacimiento&#x27;,
+      type: &#x27;input&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        label: &#x27;Fecha Nacimiento&#x27;,
+        type:&#x27;date&#x27;,
+        required: true,
+        hideRequiredMarker: true
+      }
+    },
+    {
+      key: &#x27;fechaAntiguedad&#x27;,
+      type: &#x27;input&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        label: &#x27;Fecha Antigüedad&#x27;,
+        type:&#x27;date&#x27;,
+        required: true,
+        hideRequiredMarker: true
+      }
+    },
+    {
+      key: &#x27;categoria&#x27;,
+      type: &#x27;input&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        label: &#x27;Categoría&#x27;,
+        type:&#x27;text&#x27;,
+        required: true,
+        hideRequiredMarker: true
+      }
+    },
+    {
+      key: &#x27;iban&#x27;,
+      type: &#x27;input&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        label: &#x27;IBAN&#x27;,
+        maxLength: 24,
+        type:&#x27;text&#x27;,
+        required: true,
+        hideRequiredMarker: true
+      }
+    },
+    {
+      key: &#x27;telefono&#x27;,
+      type: &#x27;input&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        label: &#x27;Teléfono&#x27;,
+        maxLength: 9,
+        type:&#x27;text&#x27;,
+        required: true,
+        hideRequiredMarker: true
+      }
+    },
+    {
+      key: &#x27;email&#x27;,
+      type: &#x27;input&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        label: &#x27;Email&#x27;,
+        type:&#x27;text&#x27;,
+        required: true,
+        hideRequiredMarker: true
+      }
+    },
+    {
+      key: &#x27;password&#x27;,
+      type: &#x27;input&#x27;,
+      wrappers: [&#x27;form-field-horizontal&#x27;],
+      props: {
+        label: &#x27;Contraseña&#x27;,
+        type:&#x27;password&#x27;,
+        required: true,
+        hideRequiredMarker: true
+      }
+    },
+
+  ];
+
+  /**
+   * Abre el modal para crear un nuevo trabajador y resetea el formulario.
+   */
+  abrirModalNuevoTrabajador() {
+    this.nuevoForm.reset();
+    this.modalNuevoTrabajador.open();
+  }
+
+  /**
+   * Envía los datos del nuevo trabajador al backend y actualiza la lista.
+   */
+  guardarNuevoTrabajador() {
+    console.log(this.nuevoModel)
+    this.empresaService.altaTrabajador(this.nuevoModel).subscribe({
+      next: response &#x3D;&gt; {
+        this.snackbarok(&quot;Trabajador creado correctamente&quot;);
+        this.cargarTrabajadores();
+        this.modalNuevoTrabajador.close();
+      },
+      error: err &#x3D;&gt; {
+        this.snackbarnok(&quot;Hubo un error al crear el trabajador&quot;)
+      }
+    })
+  }
+
+  /**
+   * Agrega un listener para permitir el scroll horizontal con la rueda del ratón.
+   * Apunta al área de scroll de tarjetas.
+   */
+  private addScrollListeners() {
+    const el &#x3D; this.scrollArea.nativeElement;
+
+    el.addEventListener(&#x27;wheel&#x27;, (e) &#x3D;&gt; {
+      if (e.deltaY !&#x3D;&#x3D; 0) {
+        e.preventDefault();
+        el.scrollLeft +&#x3D; e.deltaY;
+      }
+    }, { passive: false });
+  }
+
+  /**
+   * Formateador de fecha reutilizable en la vista.
+   */
+  protected readonly formatDate &#x3D; formatDate;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;!-- Contenedor del título + buscador --&gt;
+&lt;div class&#x3D;&quot;d-flex justify-content-between mx-2 &quot;&gt;
+    &lt;h3 class&#x3D;&quot;text-white&quot;&gt;Trabajadores&lt;/h3&gt;
+    &lt;div class&#x3D;&quot;w-50&quot;&gt;
+        &lt;formly-form [form]&#x3D;&quot;filterForm&quot; [fields]&#x3D;&quot;filterFields&quot; [model]&#x3D;&quot;filterModel&quot;&gt;&lt;/formly-form&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;button (click)&#x3D;&quot;abrirModalNuevoTrabajador()&quot; class&#x3D;&quot;btn btn-sm btn-azul-claro&quot;&gt;&lt;i class&#x3D;&quot;bi bi-plus-lg&quot;&gt;&lt;/i&gt; Nuevo trabajador&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- → Botón izquierda --&gt;
+&lt;div class&#x3D; &quot;d-flex align-items-center position-relative mx-2&quot;&gt;
+  &lt;button class&#x3D;&quot;btn position-absolute start-0 top-50 translate-middle-y z-3 &quot;
+          style&#x3D;&quot;background-color: rgba(248, 249, 250, 0.6);&quot;
+          (mousedown)&#x3D;&quot;startScroll(-1)&quot;
+          (mouseup)&#x3D;&quot;stopScroll()&quot;
+          (mouseleave)&#x3D;&quot;stopScroll()&quot;&gt;
+    &lt;i class&#x3D;&quot;bi bi-chevron-left fs-3 text-dark&quot;&gt;&lt;/i&gt;
+  &lt;/button&gt;
+
+  &lt;!-- Zona de scroll --&gt;
+    &lt;div #scrollArea class&#x3D;&quot;scroll-area d-flex overflow-auto px-3 no-scrollbar&quot;&gt;
+    &lt;div *ngFor&#x3D;&quot;let t of trabajadores&quot; class&#x3D;&quot;card mx-2 bg-white bg-opacity-10&quot; style&#x3D;&quot;flex: 0 0 auto;&quot;&gt;
+      &lt;div class&#x3D;&quot;card-body py-1 text-white&quot;&gt;
+        &lt;p class&#x3D;&quot;my-0 py-0 fs-5 &quot;&gt;{{ t.nombre }} {{ t.apellidos }}&lt;/p&gt;
+        &lt;p class&#x3D;&quot;my-0 py-0&quot;&gt;{{t.categoria}}&lt;/p&gt;
+        &lt;p class&#x3D;&quot;my-0 py-0&quot;&gt;
+            &lt;strong&gt;Email:&lt;/strong&gt; {{ t.email }}&lt;br&gt;
+            &lt;strong&gt;Tel.:&lt;/strong&gt; {{ t.telefono }}
+        &lt;/p&gt;
+      &lt;/div&gt;
+        &lt;div class&#x3D;&quot;card-footer py-1 d-flex justify-content-evenly&quot;&gt;
+            &lt;button class&#x3D;&quot;btn btn-sm btn-secondary&quot; (click)&#x3D;&quot;verDetalleTrabajador(t)&quot;&gt;&lt;i class&#x3D;&quot;bi bi-search&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+            &lt;button class&#x3D;&quot;btn btn-sm btn-secondary&quot; (click)&#x3D;&quot;openModalEditar(t)&quot;&gt;&lt;i class&#x3D;&quot;bi bi-pencil&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+            &lt;button class&#x3D;&quot;btn btn-sm btn-secondary&quot; (click)&#x3D;&quot;openModalNomina(t)&quot;&gt;&lt;i class&#x3D;&quot;bi bi-file-earmark-text&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+            &lt;button class&#x3D;&quot;btn btn-sm btn-secondary&quot; (click)&#x3D;&quot;openModalFichajes(t)&quot;&gt;&lt;i class&#x3D;&quot;bi bi-clock&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+            &lt;button class&#x3D;&quot;btn btn-sm btn-secondary&quot; (click)&#x3D;&quot;confirmarEliminacion(t)&quot;&gt;&lt;i class&#x3D;&quot;bi bi-x-lg&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- → Botón derecha --&gt;
+  &lt;button class&#x3D;&quot;btn btn-light position-absolute end-0 top-50 translate-middle-y z-3&quot;
+          style&#x3D;&quot;background-color: rgba(248, 249, 250, 0.6);&quot;
+          (mousedown)&#x3D;&quot;startScroll(+1)&quot;
+          (mouseup)&#x3D;&quot;stopScroll()&quot;
+          (mouseleave)&#x3D;&quot;stopScroll()&quot;&gt;
+    &lt;i class&#x3D;&quot;bi bi-chevron-right fs-3&quot;&gt;&lt;/i&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+&lt;app-modal #modalDetalle [title]&#x3D;&quot;&#x27;Detalles del trabajador&#x27;&quot;&gt;
+    &lt;formly-form [form]&#x3D;&quot;detalleForm&quot; [fields]&#x3D;&quot;detalleFields&quot; [model]&#x3D;&quot;detalleModel&quot;&gt;&lt;/formly-form&gt;
+&lt;/app-modal&gt;
+
+&lt;app-modal #modalEditar [title]&#x3D;&quot;&#x27;Editar datos del trabajador&#x27;&quot;&gt;
+    &lt;formly-form [form]&#x3D;&quot;editarForm&quot; [fields]&#x3D;&quot;editarFields&quot; [model]&#x3D;&quot;editarModel&quot;&gt;&lt;/formly-form&gt;
+    &lt;button modal-footer class&#x3D;&quot;btn btn-secondary&quot; [disabled]&#x3D;&quot;!editarForm.valid&quot; (click)&#x3D;&quot;actualizarTrabajador()&quot;&gt;Guardar&lt;/button&gt;
+&lt;/app-modal&gt;
+
+&lt;app-modal #modalNomina [title]&#x3D;&quot;&#x27;Nóminas de &#x27; + nombre&quot;&gt;
+    &lt;ng-container *ngIf&#x3D;&quot;!showUploadForm&quot;&gt;
+        &lt;ng-container *ngIf&#x3D;&quot;nominasTrabajador?.length; else noNominas&quot;&gt;
+            &lt;table class&#x3D;&quot;table table-glass&quot;&gt;
+                &lt;thead class&#x3D;&quot;sticky-top&quot;&gt;
+                &lt;tr class&#x3D;&quot;text-center&quot;&gt;
+                    &lt;th scope&#x3D;&quot;col&quot; style&#x3D;&quot;width: 50%;&quot;&gt;Período&lt;/th&gt;
+                    &lt;th scope&#x3D;&quot;col&quot; style&#x3D;&quot;width: 50%;&quot;&gt;Acciones&lt;/th&gt;
+                &lt;/tr&gt;
+                &lt;/thead&gt;
+                &lt;tbody&gt;
+                &lt;tr class&#x3D;&quot;text-center align-middle&quot; *ngFor&#x3D;&quot;let nomina of nominasTrabajador&quot;&gt;
+                    &lt;td&gt;{{ formatDate(nomina.periodo!) }}&lt;/td&gt;
+                    &lt;td class&#x3D;&quot;d-flex justify-content-evenly&quot;&gt;
+                        &lt;button class&#x3D;&quot;btn btn-secondary&quot; (click)&#x3D;&quot;descargarNomina(nomina)&quot;&gt;
+                            &lt;i class&#x3D;&quot;bi bi-file-earmark-arrow-down&quot;&gt;&lt;/i&gt;
+                        &lt;/button&gt;
+                        &lt;button class&#x3D;&quot;btn btn-secondary&quot; (click)&#x3D;&quot;eliminarNomina(nomina)&quot;&gt;
+                            &lt;i class&#x3D;&quot;bi bi-file-earmark-excel&quot;&gt;&lt;/i&gt;
+                        &lt;/button&gt;
+                    &lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;/tbody&gt;
+            &lt;/table&gt;
+        &lt;/ng-container&gt;
+    &lt;/ng-container&gt;
+    &lt;ng-container *ngIf&#x3D;&quot;showUploadForm&quot;&gt;
+        &lt;form [formGroup]&#x3D;&quot;uploadForm&quot; class&#x3D;&quot;px-3 text-white&quot; (ngSubmit)&#x3D;&quot;submitUpload()&quot;&gt;
+            &lt;input type&#x3D;&quot;hidden&quot; formControlName&#x3D;&quot;trabajadorId&quot;/&gt;
+            &lt;div class&#x3D;&quot;mb-3 &quot;&gt;
+                &lt;label&gt;Periodo&lt;/label&gt;
+                &lt;input type&#x3D;&quot;date&quot; formControlName&#x3D;&quot;periodo&quot; class&#x3D;&quot;form-control&quot;/&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;mb-3&quot;&gt;
+                &lt;label&gt;Archivo PDF&lt;/label&gt;
+                &lt;input type&#x3D;&quot;file&quot; accept&#x3D;&quot;application/pdf&quot; class&#x3D;&quot;form-control&quot; (change)&#x3D;&quot;onFileChange($event)&quot;/&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;d-flex justify-content-end&quot;&gt;
+                &lt;button type&#x3D;&quot;submit&quot; class&#x3D;&quot;btn btn-secondary&quot; [disabled]&#x3D;&quot;uploadForm.invalid&quot;&gt;&lt;i class&#x3D;&quot;bi bi-file-earmark-arrow-up&quot;&gt;&lt;/i&gt; Guardar&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/form&gt;
+    &lt;/ng-container&gt;
+    &lt;ng-template #noNominas&gt;
+        &lt;p class&#x3D;&quot;text-center my-3  text-white&quot;&gt;
+            No hay nóminas disponibles para este trabajador.
+        &lt;/p&gt;
+    &lt;/ng-template&gt;
+    &lt;button modal-footer class&#x3D;&quot;btn btn-secondary&quot; (click)&#x3D;&quot;cambiarFormularioSubirNomina()&quot;&gt;&lt;i [ngClass]&#x3D;&quot;iconoBoton&quot;&gt;&lt;/i&gt; {{ mensajeBoton }}&lt;/button&gt;
+&lt;/app-modal&gt;
+
+&lt;app-modal #modalEliminar&gt;
+    &lt;p class&#x3D;&quot;text-center mt-3 text-white&quot;&gt;¿Seguro que quieres eliminar al trabajador?&lt;/p&gt;
+    &lt;formly-form [form]&#x3D;&quot;eliminarForm&quot; [fields]&#x3D;&quot;eliminarFields&quot; [model]&#x3D;&quot;eliminarModel&quot;&gt;&lt;/formly-form&gt;
+    &lt;button modal-footer class&#x3D;&quot;btn btn-secondary&quot; (click)&#x3D;&quot;eliminarTrabajador()&quot;&gt;Eliminar&lt;/button&gt;
+&lt;/app-modal&gt;
+
+&lt;app-modal #modalFichajes [title]&#x3D;&quot;&#x27;Últimos fichajes de &#x27; + nombre&quot;&gt;
+    &lt;ng-container *ngIf&#x3D;&quot;fichajesFiltrados?.length; else noFichajes&quot;&gt;
+    &lt;table class&#x3D;&quot;table table-glass&quot;&gt;
+        &lt;thead&gt;
+            &lt;tr class&#x3D;&quot;text-center&quot;&gt;
+                &lt;th scope&#x3D;&quot;col&quot; style&#x3D;&quot;width: 10%;&quot;&gt;#&lt;/th&gt;
+                &lt;th scope&#x3D;&quot;col&quot; style&#x3D;&quot;width: 40%;&quot;&gt;Inicio&lt;/th&gt;
+                &lt;th scope&#x3D;&quot;col&quot; style&#x3D;&quot;width: 40%;&quot;&gt;Fin&lt;/th&gt;
+                &lt;th scope&#x3D;&quot;col&quot; style&#x3D;&quot;width: 10%;&quot;&gt;Duración&lt;/th&gt;
+            &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+            &lt;tr class&#x3D;&quot;text-center&quot; *ngFor&#x3D;&quot;let f of fichajesFiltrados; let i &#x3D; index&quot;&gt;
+                &lt;td&gt;{{ i + 1 }}&lt;/td&gt;
+                &lt;td&gt;{{ f.fechaInicioFmt }}&lt;/td&gt;
+                &lt;td&gt;{{ f.fechaFinFmt }}&lt;/td&gt;
+                &lt;td&gt;{{ f.tiempoTrabajado }}&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/tbody&gt;
+    &lt;/table&gt;
+    &lt;/ng-container&gt;
+    &lt;ng-template #noFichajes&gt;
+        &lt;p class&#x3D;&quot;text-center my-3 text-white&quot;&gt;
+            No hay fichajes disponibles para este trabajador.
+        &lt;/p&gt;
+    &lt;/ng-template&gt;
+&lt;/app-modal&gt;
+
+&lt;app-modal #modalNuevoTrabajador&gt;
+    &lt;formly-form [form]&#x3D;&quot;nuevoForm&quot; [fields]&#x3D;&quot;nuevoFields&quot; [model]&#x3D;&quot;nuevoModel&quot;&gt;&lt;/formly-form&gt;
+    &lt;button modal-footer class&#x3D;&quot;btn btn-secondary&quot; [disabled]&#x3D;&quot;!nuevoForm.valid&quot; (click)&#x3D;&quot;guardarNuevoTrabajador()&quot;&gt;Guardar&lt;/button&gt;
+&lt;/app-modal&gt;</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><!-- Contenedor del título + buscador --><div class="d-flex justify-content-between mx-2 ">    <h3 class="text-white">Trabajadores</h3>    <div class="w-50">        <formly-form [form]="filterForm" [fields]="filterFields" [model]="filterModel"></formly-form>    </div>    <div>        <button (click)="abrirModalNuevoTrabajador()" class="btn btn-sm btn-azul-claro"><i class="bi bi-plus-lg"></i> Nuevo trabajador</button>    </div></div><!-- → Botón izquierda --><div class= "d-flex align-items-center position-relative mx-2">  <button class="btn position-absolute start-0 top-50 translate-middle-y z-3 "          style="background-color: rgba(248, 249, 250, 0.6);"          (mousedown)="startScroll(-1)"          (mouseup)="stopScroll()"          (mouseleave)="stopScroll()">    <i class="bi bi-chevron-left fs-3 text-dark"></i>  </button>  <!-- Zona de scroll -->    <div #scrollArea class="scroll-area d-flex overflow-auto px-3 no-scrollbar">    <div *ngFor="let t of trabajadores" class="card mx-2 bg-white bg-opacity-10" style="flex: 0 0 auto;">      <div class="card-body py-1 text-white">        <p class="my-0 py-0 fs-5 ">{{ t.nombre }} {{ t.apellidos }}</p>        <p class="my-0 py-0">{{t.categoria}}</p>        <p class="my-0 py-0">            <strong>Email:</strong> {{ t.email }}<br>            <strong>Tel.:</strong> {{ t.telefono }}        </p>      </div>        <div class="card-footer py-1 d-flex justify-content-evenly">            <button class="btn btn-sm btn-secondary" (click)="verDetalleTrabajador(t)"><i class="bi bi-search"></i></button>            <button class="btn btn-sm btn-secondary" (click)="openModalEditar(t)"><i class="bi bi-pencil"></i></button>            <button class="btn btn-sm btn-secondary" (click)="openModalNomina(t)"><i class="bi bi-file-earmark-text"></i></button>            <button class="btn btn-sm btn-secondary" (click)="openModalFichajes(t)"><i class="bi bi-clock"></i></button>            <button class="btn btn-sm btn-secondary" (click)="confirmarEliminacion(t)"><i class="bi bi-x-lg"></i></button>        </div>    </div>  </div>  <!-- → Botón derecha -->  <button class="btn btn-light position-absolute end-0 top-50 translate-middle-y z-3"          style="background-color: rgba(248, 249, 250, 0.6);"          (mousedown)="startScroll(+1)"          (mouseup)="stopScroll()"          (mouseleave)="stopScroll()">    <i class="bi bi-chevron-right fs-3"></i>  </button></div><app-modal #modalDetalle [title]="\'Detalles del trabajador\'">    <formly-form [form]="detalleForm" [fields]="detalleFields" [model]="detalleModel"></formly-form></app-modal><app-modal #modalEditar [title]="\'Editar datos del trabajador\'">    <formly-form [form]="editarForm" [fields]="editarFields" [model]="editarModel"></formly-form>    <button modal-footer class="btn btn-secondary" [disabled]="!editarForm.valid" (click)="actualizarTrabajador()">Guardar</button></app-modal><app-modal #modalNomina [title]="\'Nóminas de \' + nombre">    <ng-container *ngIf="!showUploadForm">        <ng-container *ngIf="nominasTrabajador?.length; else noNominas">            <table class="table table-glass">                <thead class="sticky-top">                <tr class="text-center">                    <th scope="col" style="width: 50%;">Período</th>                    <th scope="col" style="width: 50%;">Acciones</th>                </tr>                </thead>                <tbody>                <tr class="text-center align-middle" *ngFor="let nomina of nominasTrabajador">                    <td>{{ formatDate(nomina.periodo!) }}</td>                    <td class="d-flex justify-content-evenly">                        <button class="btn btn-secondary" (click)="descargarNomina(nomina)">                            <i class="bi bi-file-earmark-arrow-down"></i>                        </button>                        <button class="btn btn-secondary" (click)="eliminarNomina(nomina)">                            <i class="bi bi-file-earmark-excel"></i>                        </button>                    </td>                </tr>                </tbody>            </table>        </ng-container>    </ng-container>    <ng-container *ngIf="showUploadForm">        <form [formGroup]="uploadForm" class="px-3 text-white" (ngSubmit)="submitUpload()">            <input type="hidden" formControlName="trabajadorId"/>            <div class="mb-3 ">                <label>Periodo</label>                <input type="date" formControlName="periodo" class="form-control"/>            </div>            <div class="mb-3">                <label>Archivo PDF</label>                <input type="file" accept="application/pdf" class="form-control" (change)="onFileChange($event)"/>            </div>            <div class="d-flex justify-content-end">                <button type="submit" class="btn btn-secondary" [disabled]="uploadForm.invalid"><i class="bi bi-file-earmark-arrow-up"></i> Guardar</button>            </div>        </form>    </ng-container>    <ng-template #noNominas>        <p class="text-center my-3  text-white">            No hay nóminas disponibles para este trabajador.        </p>    </ng-template>    <button modal-footer class="btn btn-secondary" (click)="cambiarFormularioSubirNomina()"><i [ngClass]="iconoBoton"></i> {{ mensajeBoton }}</button></app-modal><app-modal #modalEliminar>    <p class="text-center mt-3 text-white">¿Seguro que quieres eliminar al trabajador?</p>    <formly-form [form]="eliminarForm" [fields]="eliminarFields" [model]="eliminarModel"></formly-form>    <button modal-footer class="btn btn-secondary" (click)="eliminarTrabajador()">Eliminar</button></app-modal><app-modal #modalFichajes [title]="\'Últimos fichajes de \' + nombre">    <ng-container *ngIf="fichajesFiltrados?.length; else noFichajes">    <table class="table table-glass">        <thead>            <tr class="text-center">                <th scope="col" style="width: 10%;">#</th>                <th scope="col" style="width: 40%;">Inicio</th>                <th scope="col" style="width: 40%;">Fin</th>                <th scope="col" style="width: 10%;">Duración</th>            </tr>        </thead>        <tbody>            <tr class="text-center" *ngFor="let f of fichajesFiltrados; let i = index">                <td>{{ i + 1 }}</td>                <td>{{ f.fechaInicioFmt }}</td>                <td>{{ f.fechaFinFmt }}</td>                <td>{{ f.tiempoTrabajado }}</td>            </tr>        </tbody>    </table>    </ng-container>    <ng-template #noFichajes>        <p class="text-center my-3 text-white">            No hay fichajes disponibles para este trabajador.        </p>    </ng-template></app-modal><app-modal #modalNuevoTrabajador>    <formly-form [form]="nuevoForm" [fields]="nuevoFields" [model]="nuevoModel"></formly-form>    <button modal-footer class="btn btn-secondary" [disabled]="!nuevoForm.valid" (click)="guardarNuevoTrabajador()">Guardar</button></app-modal></div>'
+    var COMPONENTS = [{'name': 'AltaEmpresaComponent', 'selector': 'app-alta-empresa'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'DashboardFichajesComponent', 'selector': 'app-dashboard-fichajes'},{'name': 'DashboardFichajesTrabajadorComponent', 'selector': 'app-dashboard-fichajes-trabajador'},{'name': 'DashboardNominasTrabajadorComponent', 'selector': 'app-dashboard-nominas-trabajador'},{'name': 'DashboardPermisosComponent', 'selector': 'app-dashboard-permisos'},{'name': 'DashboardPermisosTrabajadorComponent', 'selector': 'app-dashboard-permisos-trabajador'},{'name': 'DashboardTrabajadoresComponent', 'selector': 'app-dashboard-trabajadores'},{'name': 'EmpresaDashboardComponent', 'selector': 'app-empresa-dashboard'},{'name': 'FormlyHorizontalWrapper', 'selector': 'formly-horizontal-wrapper'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'ModalComponent', 'selector': 'app-modal'},{'name': 'NavbarEmpresaComponent', 'selector': 'app-navbar-empresa'},{'name': 'NavbarTrabajadorComponent', 'selector': 'app-navbar-trabajador'},{'name': 'PageNotFoundComponent', 'selector': 'app-page-not-found'},{'name': 'TrabajadorDashboardComponent', 'selector': 'app-trabajador-dashboard'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'DashboardTrabajadoresComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'DashboardTrabajadoresComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

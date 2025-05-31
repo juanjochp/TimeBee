@@ -1,0 +1,19 @@
+.tabla-scroll-wrapper {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  position: relative;
+}
+
+table th {
+  font-size: small;
+}
+table td {
+  font-size: small;
+}
+
+/* Para evitar que se vea el scrollbar en algunos navegadores */
+.tabla-scroll-wrapper::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}

@@ -1,0 +1,148 @@
+<!-- Contenedor del título + buscador -->
+<div class="d-flex justify-content-between mx-2 ">
+    <h3 class="text-white">Trabajadores</h3>
+    <div class="w-50">
+        <formly-form [form]="filterForm" [fields]="filterFields" [model]="filterModel"></formly-form>
+    </div>
+    <div>
+        <button (click)="abrirModalNuevoTrabajador()" class="btn btn-sm btn-azul-claro"><i class="bi bi-plus-lg"></i> Nuevo trabajador</button>
+    </div>
+</div>
+<!-- → Botón izquierda -->
+<div class= "d-flex align-items-center position-relative mx-2">
+  <button class="btn position-absolute start-0 top-50 translate-middle-y z-3 "
+          style="background-color: rgba(248, 249, 250, 0.6);"
+          (mousedown)="startScroll(-1)"
+          (mouseup)="stopScroll()"
+          (mouseleave)="stopScroll()">
+    <i class="bi bi-chevron-left fs-3 text-dark"></i>
+  </button>
+
+  <!-- Zona de scroll -->
+    <div #scrollArea class="scroll-area d-flex overflow-auto px-3 no-scrollbar">
+    <div *ngFor="let t of trabajadores" class="card mx-2 bg-white bg-opacity-10" style="flex: 0 0 auto;">
+      <div class="card-body py-1 text-white">
+        <p class="my-0 py-0 fs-5 ">{{ t.nombre }} {{ t.apellidos }}</p>
+        <p class="my-0 py-0">{{t.categoria}}</p>
+        <p class="my-0 py-0">
+            <strong>Email:</strong> {{ t.email }}<br>
+            <strong>Tel.:</strong> {{ t.telefono }}
+        </p>
+      </div>
+        <div class="card-footer py-1 d-flex justify-content-evenly">
+            <button class="btn btn-sm btn-secondary" (click)="verDetalleTrabajador(t)"><i class="bi bi-search"></i></button>
+            <button class="btn btn-sm btn-secondary" (click)="openModalEditar(t)"><i class="bi bi-pencil"></i></button>
+            <button class="btn btn-sm btn-secondary" (click)="openModalNomina(t)"><i class="bi bi-file-earmark-text"></i></button>
+            <button class="btn btn-sm btn-secondary" (click)="openModalFichajes(t)"><i class="bi bi-clock"></i></button>
+            <button class="btn btn-sm btn-secondary" (click)="confirmarEliminacion(t)"><i class="bi bi-x-lg"></i></button>
+        </div>
+    </div>
+  </div>
+
+  <!-- → Botón derecha -->
+  <button class="btn btn-light position-absolute end-0 top-50 translate-middle-y z-3"
+          style="background-color: rgba(248, 249, 250, 0.6);"
+          (mousedown)="startScroll(+1)"
+          (mouseup)="stopScroll()"
+          (mouseleave)="stopScroll()">
+    <i class="bi bi-chevron-right fs-3"></i>
+  </button>
+</div>
+
+<app-modal #modalDetalle [title]="'Detalles del trabajador'">
+    <formly-form [form]="detalleForm" [fields]="detalleFields" [model]="detalleModel"></formly-form>
+</app-modal>
+
+<app-modal #modalEditar [title]="'Editar datos del trabajador'">
+    <formly-form [form]="editarForm" [fields]="editarFields" [model]="editarModel"></formly-form>
+    <button modal-footer class="btn btn-secondary" [disabled]="!editarForm.valid" (click)="actualizarTrabajador()">Guardar</button>
+</app-modal>
+
+<app-modal #modalNomina [title]="'Nóminas de ' + nombre">
+    <ng-container *ngIf="!showUploadForm">
+        <ng-container *ngIf="nominasTrabajador?.length; else noNominas">
+            <table class="table table-glass">
+                <thead class="sticky-top">
+                <tr class="text-center">
+                    <th scope="col" style="width: 50%;">Período</th>
+                    <th scope="col" style="width: 50%;">Acciones</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="text-center align-middle" *ngFor="let nomina of nominasTrabajador">
+                    <td>{{ formatDate(nomina.periodo!) }}</td>
+                    <td class="d-flex justify-content-evenly">
+                        <button class="btn btn-secondary" (click)="descargarNomina(nomina)">
+                            <i class="bi bi-file-earmark-arrow-down"></i>
+                        </button>
+                        <button class="btn btn-secondary" (click)="eliminarNomina(nomina)">
+                            <i class="bi bi-file-earmark-excel"></i>
+                        </button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </ng-container>
+    </ng-container>
+    <ng-container *ngIf="showUploadForm">
+        <form [formGroup]="uploadForm" class="px-3 text-white" (ngSubmit)="submitUpload()">
+            <input type="hidden" formControlName="trabajadorId"/>
+            <div class="mb-3 ">
+                <label>Periodo</label>
+                <input type="date" formControlName="periodo" class="form-control"/>
+            </div>
+            <div class="mb-3">
+                <label>Archivo PDF</label>
+                <input type="file" accept="application/pdf" class="form-control" (change)="onFileChange($event)"/>
+            </div>
+            <div class="d-flex justify-content-end">
+                <button type="submit" class="btn btn-secondary" [disabled]="uploadForm.invalid"><i class="bi bi-file-earmark-arrow-up"></i> Guardar</button>
+            </div>
+        </form>
+    </ng-container>
+    <ng-template #noNominas>
+        <p class="text-center my-3  text-white">
+            No hay nóminas disponibles para este trabajador.
+        </p>
+    </ng-template>
+    <button modal-footer class="btn btn-secondary" (click)="cambiarFormularioSubirNomina()"><i [ngClass]="iconoBoton"></i> {{ mensajeBoton }}</button>
+</app-modal>
+
+<app-modal #modalEliminar>
+    <p class="text-center mt-3 text-white">¿Seguro que quieres eliminar al trabajador?</p>
+    <formly-form [form]="eliminarForm" [fields]="eliminarFields" [model]="eliminarModel"></formly-form>
+    <button modal-footer class="btn btn-secondary" (click)="eliminarTrabajador()">Eliminar</button>
+</app-modal>
+
+<app-modal #modalFichajes [title]="'Últimos fichajes de ' + nombre">
+    <ng-container *ngIf="fichajesFiltrados?.length; else noFichajes">
+    <table class="table table-glass">
+        <thead>
+            <tr class="text-center">
+                <th scope="col" style="width: 10%;">#</th>
+                <th scope="col" style="width: 40%;">Inicio</th>
+                <th scope="col" style="width: 40%;">Fin</th>
+                <th scope="col" style="width: 10%;">Duración</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="text-center" *ngFor="let f of fichajesFiltrados; let i = index">
+                <td>{{ i + 1 }}</td>
+                <td>{{ f.fechaInicioFmt }}</td>
+                <td>{{ f.fechaFinFmt }}</td>
+                <td>{{ f.tiempoTrabajado }}</td>
+            </tr>
+        </tbody>
+    </table>
+    </ng-container>
+    <ng-template #noFichajes>
+        <p class="text-center my-3 text-white">
+            No hay fichajes disponibles para este trabajador.
+        </p>
+    </ng-template>
+</app-modal>
+
+<app-modal #modalNuevoTrabajador>
+    <formly-form [form]="nuevoForm" [fields]="nuevoFields" [model]="nuevoModel"></formly-form>
+    <button modal-footer class="btn btn-secondary" [disabled]="!nuevoForm.valid" (click)="guardarNuevoTrabajador()">Guardar</button>
+</app-modal>

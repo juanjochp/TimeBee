@@ -1,0 +1,16 @@
+<app-navbar-trabajador></app-navbar-trabajador>
+<div class="container-fluid vh-100 d-flex flex-column bg-azul-oscuro">
+    <div class="row mx-1 py-2 flex-shrink-0">
+        <app-dashboard-fichajes-trabajador></app-dashboard-fichajes-trabajador>
+    </div>
+
+    <!-- Permisos y Nóminas en dos columnas -->
+    <div class="row mx-1 flex-grow-1">
+        <div class="col-md-6 d-flex flex-column">
+            <app-dashboard-permisos-trabajador class="flex-fill"></app-dashboard-permisos-trabajador>
+        </div>
+        <div class="col-md-6 d-flex flex-column">
+            <app-dashboard-nominas-trabajador class="flex-fill"></app-dashboard-nominas-trabajador>
+        </div>
+    </div>
+</div>

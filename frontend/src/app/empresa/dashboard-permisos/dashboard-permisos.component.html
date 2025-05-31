@@ -1,0 +1,71 @@
+<div class="d-flex justify-content-between mt-1 flex-wrap">
+
+    <h5 class="m-0 text-white">{{ verPendientes ? 'Permisos pendientes' : 'Histórico de permisos' }}</h5>
+
+    <formly-form [form]="filterForm" [fields]="filterFields" [model]="filterModel"></formly-form>
+
+    <div>
+        <button class="btn btn-sm btn-azul-claro d-flex align-items-center gap-1" (click)="alternarVista()">
+            <i class="bi" [ngClass]="verPendientes ? 'bi-clock-history' : 'bi-list-check'"></i>
+            {{ verPendientes ? 'Histórico' : 'Pendientes' }}
+        </button>
+    </div>
+</div>
+
+<div *ngIf="verPendientes; else historicoTemplate" class="table-responsive tabla-scroll-wrapper" style="height: 50vh">
+    <div *ngIf="permisosSolicitadosFiltrados.length; else noHayPermisos">
+        <table class="table table-sm table-hover mb-0 table-glass">
+            <thead class="sticky-top">
+            <tr class="text-center">
+                <th>Nombre</th>
+                <th>Día</th>
+                <th>Horas</th>
+                <th>Tipo</th>
+                <th>Acciones</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr class="text-center align-middle" *ngFor="let permiso of permisosSolicitadosFiltrados">
+                    <td>{{ permiso.trabajador?.nombre + ' ' + permiso.trabajador?.apellidos }}</td>
+                    <td>{{ formatDate(permiso.fecha!) }}</td>
+                    <td>{{ formatHours(permiso.hora!) }}</td>
+                    <td> {{ humanizeEnum(permiso.permiso!) }} </td>
+                    <td class="d-flex justify-content-evenly">
+                        <button (click)="aprobarPermiso(permiso)" class="btn btn-sm btn-success"><i class="bi bi-check-lg"></i></button>
+                        <button (click)="rechazarPermiso(permiso)" class="btn btn-sm btn-danger"><i class="bi bi-x-lg"></i></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <ng-template #noHayPermisos>
+        <p class="text-center my-3 text-white">¡No hay permisos pendientes!</p>
+    </ng-template>
+
+</div>
+
+    <ng-template #historicoTemplate>
+        <div class="table-responsive tabla-scroll-wrapper" style="height: 50vh">
+            <table class="table table-sm table-hover mb-0 table-glass">
+                <thead class="sticky-top">
+                <tr class="text-center">
+                    <th>Nombre</th>
+                    <th>Día</th>
+                    <th>Horas</th>
+                    <th>Tipo</th>
+                    <th>Estado</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr class="text-center align-middle " *ngFor="let permiso of permisosResueltosFiltrados">
+                        <td>{{ permiso.trabajador?.nombre + ' ' + permiso.trabajador?.apellidos }}</td>
+                        <td>{{ formatDate(permiso.fecha!) }}</td>
+                        <td>{{ formatHours(permiso.hora!) }}</td>
+                        <td>{{ humanizeEnum(permiso.permiso!) }}</td>
+                        <td>{{ humanizeEnum(permiso.estado!) }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </ng-template>
+

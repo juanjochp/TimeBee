@@ -1,0 +1,18 @@
+<div class="d-flex justify-content-center align-items-center vh-100 bg-azul-oscuro">
+    <div class="login-card text-center">
+        <img src="assets/img/logo2.png" alt="TimeBee logo" width="60" class="mb-3" />
+        <h1 class="mb-4 text-dark fw-bold">TimeBee</h1>
+
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <formly-form [form]="form" [fields]="fields" [model]="model"></formly-form>
+
+            <button type="submit" class="btn w-50 mt-3 btn-abeja">
+                Iniciar Sesión
+            </button>
+        </form>
+
+        <p class="mt-4 mb-2 text-secondary">¿Aún no usas TimeBee?</p>
+        <button class="btn btn-outline-dark w-50" (click)="altaEmpresa()">Alta Empresa</button>
+    </div>
+</div>
+

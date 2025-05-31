@@ -1,0 +1,42 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;          /* que nunca haga scroll el body */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0,0.5);
+  z-index: 1050;             /* por encima del contenido */
+}
+
+/* Ajusta el diálogo para que use casi todo el alto pero centrado */
+.modal-dialog {
+  margin: 0;                 /* quita márgenes automáticos de bootstrap */
+  max-height: 100vh;         /* como mucho la altura de la ventana */
+  width: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-content {
+  max-height: calc(100vh - 2rem); /* deja 1rem arriba y abajo */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Opcional: separar cabecera + cuerpo + pie */
+.modal-body {
+  flex: 1 1 auto;
+  overflow-y: scroll;
+  padding: 1rem;
+  scrollbar-width: none;       // Firefox
+  -ms-overflow-style: none;    // IE/Edge
+}
+
+.modal-body::-webkit-scrollbar {
+  display: none;               // Chrome/Safari
+}

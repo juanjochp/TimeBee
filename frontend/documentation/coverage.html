@@ -1,0 +1,1532 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>time-bee-front documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+	   <link rel="stylesheet" href="./styles/style.css">
+        <link rel="stylesheet" href="./styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="./" class="navbar-brand">time-bee-front documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content coverage">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+    <li class="breadcrumb-item">Documentation coverage</li>
+</ol>
+
+<div>
+    <img src="./images/coverage-badge-documentation.svg">
+</div>
+
+<table class="table table-bordered coverage" id="coverage-table">
+    <thead class="coverage-header">
+        <tr>
+            <th>File</th>
+            <th>Type</th>
+            <th>Identifier</th>
+            <th style="text-align:right" class="statements" data-sort-default>Statements</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/AppComponent.html">src/app/app.component.ts</a>
+            </td>
+            <td>component</td>
+            <td>AppComponent</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/AltaEmpresaComponent.html">src/app/autenticacion/alta-empresa/alta-empresa.component.ts</a>
+            </td>
+            <td>component</td>
+            <td>AltaEmpresaComponent</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(7/7)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/LoginComponent.html">src/app/autenticacion/login/login.component.ts</a>
+            </td>
+            <td>component</td>
+            <td>LoginComponent</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/8)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/FormlyHorizontalWrapper.html">src/app/core/horizontal-wrapper/horizontal-wrapper.component.ts</a>
+            </td>
+            <td>component</td>
+            <td>FormlyHorizontalWrapper</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interceptors/AuthInterceptor.html">src/app/core/interceptors/auth.interceptor.ts</a>
+            </td>
+            <td>interceptor</td>
+            <td>AuthInterceptor</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(2/2)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/functions.html#formatDate">src/app/core/library/library.ts</a>
+            </td>
+            <td>function</td>
+            <td>formatDate</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/functions.html#formatHours">src/app/core/library/library.ts</a>
+            </td>
+            <td>function</td>
+            <td>formatHours</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/functions.html#humanizeEnum">src/app/core/library/library.ts</a>
+            </td>
+            <td>function</td>
+            <td>humanizeEnum</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/ModalComponent.html">src/app/core/modal/modal.component.ts</a>
+            </td>
+            <td>component</td>
+            <td>ModalComponent</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(6/6)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/PageNotFoundComponent.html">src/app/core/page-not-found/page-not-found.component.ts</a>
+            </td>
+            <td>component</td>
+            <td>PageNotFoundComponent</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/DashboardFichajesComponent.html">src/app/empresa/dashboard-fichajes/dashboard-fichajes.component.ts</a>
+            </td>
+            <td>component</td>
+            <td>DashboardFichajesComponent</td>
+            <td align="right" data-sort="96">
+                <span class="coverage-percent">96 %</span>
+                <span class="coverage-count">(30/31)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/FichajeView.html">src/app/empresa/dashboard-fichajes/dashboard-fichajes.component.ts</a>
+            </td>
+            <td>interface</td>
+            <td>FichajeView</td>
+            <td align="right" data-sort="25">
+                <span class="coverage-percent">25 %</span>
+                <span class="coverage-count">(1/4)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/DashboardPermisosComponent.html">src/app/empresa/dashboard-permisos/dashboard-permisos.component.ts</a>
+            </td>
+            <td>component</td>
+            <td>DashboardPermisosComponent</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(21/21)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/PermisosHumanizeDto.html">src/app/empresa/dashboard-permisos/dashboard-permisos.component.ts</a>
+            </td>
+            <td>interface</td>
+            <td>PermisosHumanizeDto</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(7/7)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/DashboardTrabajadoresComponent.html">src/app/empresa/dashboard-trabajadores/dashboard-trabajadores.component.ts</a>
+            </td>
+            <td>component</td>
+            <td>DashboardTrabajadoresComponent</td>
+            <td align="right" data-sort="98">
+                <span class="coverage-percent">98 %</span>
+                <span class="coverage-count">(59/60)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/EmpresaDashboardComponent.html">src/app/empresa/empresa-dashboard/empresa-dashboard.component.ts</a>
+            </td>
+            <td>component</td>
+            <td>EmpresaDashboardComponent</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/NavbarEmpresaComponent.html">src/app/empresa/navbar-empresa/navbar-empresa.component.ts</a>
+            </td>
+            <td>component</td>
+            <td>NavbarEmpresaComponent</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(13/13)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/DashboardFichajesTrabajadorComponent.html">src/app/trabajador/dashboard-fichajes-trabajador/dashboard-fichajes-trabajador.component.ts</a>
+            </td>
+            <td>component</td>
+            <td>DashboardFichajesTrabajadorComponent</td>
+            <td align="right" data-sort="92">
+                <span class="coverage-percent">92 %</span>
+                <span class="coverage-count">(12/13)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/FichajeView.html">src/app/trabajador/dashboard-fichajes-trabajador/dashboard-fichajes-trabajador.component.ts</a>
+            </td>
+            <td>interface</td>
+            <td>FichajeView</td>
+            <td align="right" data-sort="25">
+                <span class="coverage-percent">25 %</span>
+                <span class="coverage-count">(1/4)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/DashboardNominasTrabajadorComponent.html">src/app/trabajador/dashboard-nominas-trabajador/dashboard-nominas-trabajador.component.ts</a>
+            </td>
+            <td>component</td>
+            <td>DashboardNominasTrabajadorComponent</td>
+            <td align="right" data-sort="87">
+                <span class="coverage-percent">87 %</span>
+                <span class="coverage-count">(7/8)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/DashboardPermisosTrabajadorComponent.html">src/app/trabajador/dashboard-permisos-trabajador/dashboard-permisos-trabajador.component.ts</a>
+            </td>
+            <td>component</td>
+            <td>DashboardPermisosTrabajadorComponent</td>
+            <td align="right" data-sort="96">
+                <span class="coverage-percent">96 %</span>
+                <span class="coverage-count">(28/29)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/NavbarTrabajadorComponent.html">src/app/trabajador/navbar-trabajador/navbar-trabajador.component.ts</a>
+            </td>
+            <td>component</td>
+            <td>NavbarTrabajadorComponent</td>
+            <td align="right" data-sort="92">
+                <span class="coverage-percent">92 %</span>
+                <span class="coverage-count">(12/13)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/TrabajadorDashboardComponent.html">src/app/trabajador/trabajador-dashboard/trabajador-dashboard.component.ts</a>
+            </td>
+            <td>component</td>
+            <td>TrabajadorDashboardComponent</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/BaseService.html">src/openapi/api.base.service.ts</a>
+            </td>
+            <td>class</td>
+            <td>BaseService</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/9)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#APIS">src/openapi/api/api.ts</a>
+            </td>
+            <td>variable</td>
+            <td>APIS</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./injectables/AuthControllerService.html">src/openapi/api/authController.service.ts</a>
+            </td>
+            <td>injectable</td>
+            <td>AuthControllerService</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/13)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/AuthControllerServiceInterface.html">src/openapi/api/authController.serviceInterface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>AuthControllerServiceInterface</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/4)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./injectables/EmpresasService.html">src/openapi/api/empresas.service.ts</a>
+            </td>
+            <td>injectable</td>
+            <td>EmpresasService</td>
+            <td align="right" data-sort="19">
+                <span class="coverage-percent">19 %</span>
+                <span class="coverage-count">(8/41)</span>
+            </td>
+        </tr>
+        <tr class="good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/EmpresasServiceInterface.html">src/openapi/api/empresas.serviceInterface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>EmpresasServiceInterface</td>
+            <td align="right" data-sort="72">
+                <span class="coverage-percent">72 %</span>
+                <span class="coverage-count">(8/11)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./injectables/FichajesService.html">src/openapi/api/fichajes.service.ts</a>
+            </td>
+            <td>injectable</td>
+            <td>FichajesService</td>
+            <td align="right" data-sort="17">
+                <span class="coverage-percent">17 %</span>
+                <span class="coverage-count">(5/29)</span>
+            </td>
+        </tr>
+        <tr class="good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/FichajesServiceInterface.html">src/openapi/api/fichajes.serviceInterface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>FichajesServiceInterface</td>
+            <td align="right" data-sort="62">
+                <span class="coverage-percent">62 %</span>
+                <span class="coverage-count">(5/8)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./injectables/FormasJurdicasService.html">src/openapi/api/formasJurdicas.service.ts</a>
+            </td>
+            <td>injectable</td>
+            <td>FormasJurdicasService</td>
+            <td align="right" data-sort="7">
+                <span class="coverage-percent">7 %</span>
+                <span class="coverage-count">(1/13)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/FormasJurdicasServiceInterface.html">src/openapi/api/formasJurdicas.serviceInterface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>FormasJurdicasServiceInterface</td>
+            <td align="right" data-sort="25">
+                <span class="coverage-percent">25 %</span>
+                <span class="coverage-count">(1/4)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./injectables/GenerosService.html">src/openapi/api/generos.service.ts</a>
+            </td>
+            <td>injectable</td>
+            <td>GenerosService</td>
+            <td align="right" data-sort="7">
+                <span class="coverage-percent">7 %</span>
+                <span class="coverage-count">(1/13)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/GenerosServiceInterface.html">src/openapi/api/generos.serviceInterface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>GenerosServiceInterface</td>
+            <td align="right" data-sort="25">
+                <span class="coverage-percent">25 %</span>
+                <span class="coverage-count">(1/4)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./injectables/NominasService.html">src/openapi/api/nominas.service.ts</a>
+            </td>
+            <td>injectable</td>
+            <td>NominasService</td>
+            <td align="right" data-sort="17">
+                <span class="coverage-percent">17 %</span>
+                <span class="coverage-count">(5/29)</span>
+            </td>
+        </tr>
+        <tr class="good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/NominasServiceInterface.html">src/openapi/api/nominas.serviceInterface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>NominasServiceInterface</td>
+            <td align="right" data-sort="62">
+                <span class="coverage-percent">62 %</span>
+                <span class="coverage-count">(5/8)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./injectables/PermisosService.html">src/openapi/api/permisos.service.ts</a>
+            </td>
+            <td>injectable</td>
+            <td>PermisosService</td>
+            <td align="right" data-sort="18">
+                <span class="coverage-percent">18 %</span>
+                <span class="coverage-count">(7/37)</span>
+            </td>
+        </tr>
+        <tr class="good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/PermisosServiceInterface.html">src/openapi/api/permisos.serviceInterface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>PermisosServiceInterface</td>
+            <td align="right" data-sort="70">
+                <span class="coverage-percent">70 %</span>
+                <span class="coverage-count">(7/10)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./injectables/TrabajadoresService.html">src/openapi/api/trabajadores.service.ts</a>
+            </td>
+            <td>injectable</td>
+            <td>TrabajadoresService</td>
+            <td align="right" data-sort="14">
+                <span class="coverage-percent">14 %</span>
+                <span class="coverage-count">(3/21)</span>
+            </td>
+        </tr>
+        <tr class="medium">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/TrabajadoresServiceInterface.html">src/openapi/api/trabajadores.serviceInterface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>TrabajadoresServiceInterface</td>
+            <td align="right" data-sort="50">
+                <span class="coverage-percent">50 %</span>
+                <span class="coverage-count">(3/6)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./injectables/UsuarioResourceService.html">src/openapi/api/usuarioResource.service.ts</a>
+            </td>
+            <td>injectable</td>
+            <td>UsuarioResourceService</td>
+            <td align="right" data-sort="7">
+                <span class="coverage-percent">7 %</span>
+                <span class="coverage-count">(1/13)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/UsuarioResourceServiceInterface.html">src/openapi/api/usuarioResource.serviceInterface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>UsuarioResourceServiceInterface</td>
+            <td align="right" data-sort="25">
+                <span class="coverage-percent">25 %</span>
+                <span class="coverage-count">(1/4)</span>
+            </td>
+        </tr>
+        <tr class="medium">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/Configuration.html">src/openapi/configuration.ts</a>
+            </td>
+            <td>class</td>
+            <td>Configuration</td>
+            <td align="right" data-sort="44">
+                <span class="coverage-percent">44 %</span>
+                <span class="coverage-count">(8/18)</span>
+            </td>
+        </tr>
+        <tr class="medium">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/ConfigurationParameters.html">src/openapi/configuration.ts</a>
+            </td>
+            <td>interface</td>
+            <td>ConfigurationParameters</td>
+            <td align="right" data-sort="50">
+                <span class="coverage-percent">50 %</span>
+                <span class="coverage-count">(5/10)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/CustomHttpParameterCodec.html">src/openapi/encoder.ts</a>
+            </td>
+            <td>class</td>
+            <td>CustomHttpParameterCodec</td>
+            <td align="right" data-sort="20">
+                <span class="coverage-percent">20 %</span>
+                <span class="coverage-count">(1/5)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#FormaJuridicaEnum">src/openapi/model/actualizarEmpresaDto.ts</a>
+            </td>
+            <td>variable</td>
+            <td>FormaJuridicaEnum</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/typealiases.html#FormaJuridicaEnum">src/openapi/model/actualizarEmpresaDto.ts</a>
+            </td>
+            <td>type alias</td>
+            <td>FormaJuridicaEnum</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#GeneroEnum">src/openapi/model/actualizarTrabajadorDto.ts</a>
+            </td>
+            <td>variable</td>
+            <td>GeneroEnum</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/typealiases.html#GeneroEnum">src/openapi/model/actualizarTrabajadorDto.ts</a>
+            </td>
+            <td>type alias</td>
+            <td>GeneroEnum</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#EstadoEnum">src/openapi/model/apiRespuestaBoolean.ts</a>
+            </td>
+            <td>variable</td>
+            <td>EstadoEnum</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/typealiases.html#EstadoEnum">src/openapi/model/apiRespuestaBoolean.ts</a>
+            </td>
+            <td>type alias</td>
+            <td>EstadoEnum</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#EstadoEnum">src/openapi/model/apiRespuestaEmpresaDto.ts</a>
+            </td>
+            <td>variable</td>
+            <td>EstadoEnum</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/typealiases.html#EstadoEnum">src/openapi/model/apiRespuestaEmpresaDto.ts</a>
+            </td>
+            <td>type alias</td>
+            <td>EstadoEnum</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#EstadoEnum">src/openapi/model/apiRespuestaListEmpresaDto.ts</a>
+            </td>
+            <td>variable</td>
+            <td>EstadoEnum</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/typealiases.html#EstadoEnum">src/openapi/model/apiRespuestaListEmpresaDto.ts</a>
+            </td>
+            <td>type alias</td>
+            <td>EstadoEnum</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#EstadoEnum">src/openapi/model/apiRespuestaListFichajesDto.ts</a>
+            </td>
+            <td>variable</td>
+            <td>EstadoEnum</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/typealiases.html#EstadoEnum">src/openapi/model/apiRespuestaListFichajesDto.ts</a>
+            </td>
+            <td>type alias</td>
+            <td>EstadoEnum</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#EstadoEnum">src/openapi/model/apiRespuestaListFormaJuridicaDto.ts</a>
+            </td>
+            <td>variable</td>
+            <td>EstadoEnum</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/typealiases.html#EstadoEnum">src/openapi/model/apiRespuestaListFormaJuridicaDto.ts</a>
+            </td>
+            <td>type alias</td>
+            <td>EstadoEnum</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#EstadoEnum">src/openapi/model/apiRespuestaListGeneroDto.ts</a>
+            </td>
+            <td>variable</td>
+            <td>EstadoEnum</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/typealiases.html#EstadoEnum">src/openapi/model/apiRespuestaListGeneroDto.ts</a>
+            </td>
+            <td>type alias</td>
+            <td>EstadoEnum</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#EstadoEnum">src/openapi/model/apiRespuestaListNominaMetadataDto.ts</a>
+            </td>
+            <td>variable</td>
+            <td>EstadoEnum</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/typealiases.html#EstadoEnum">src/openapi/model/apiRespuestaListNominaMetadataDto.ts</a>
+            </td>
+            <td>type alias</td>
+            <td>EstadoEnum</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#EstadoEnum">src/openapi/model/apiRespuestaListPermisosDto.ts</a>
+            </td>
+            <td>variable</td>
+            <td>EstadoEnum</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/typealiases.html#EstadoEnum">src/openapi/model/apiRespuestaListPermisosDto.ts</a>
+            </td>
+            <td>type alias</td>
+            <td>EstadoEnum</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#EstadoEnum">src/openapi/model/apiRespuestaListTipoPermisoDto.ts</a>
+            </td>
+            <td>variable</td>
+            <td>EstadoEnum</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/typealiases.html#EstadoEnum">src/openapi/model/apiRespuestaListTipoPermisoDto.ts</a>
+            </td>
+            <td>type alias</td>
+            <td>EstadoEnum</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#EstadoEnum">src/openapi/model/apiRespuestaListTrabajadorDto.ts</a>
+            </td>
+            <td>variable</td>
+            <td>EstadoEnum</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/typealiases.html#EstadoEnum">src/openapi/model/apiRespuestaListTrabajadorDto.ts</a>
+            </td>
+            <td>type alias</td>
+            <td>EstadoEnum</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#EstadoEnum">src/openapi/model/apiRespuestaTrabajadorDto.ts</a>
+            </td>
+            <td>variable</td>
+            <td>EstadoEnum</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/typealiases.html#EstadoEnum">src/openapi/model/apiRespuestaTrabajadorDto.ts</a>
+            </td>
+            <td>type alias</td>
+            <td>EstadoEnum</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="medium">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/EmailRequest.html">src/openapi/model/emailRequest.ts</a>
+            </td>
+            <td>interface</td>
+            <td>EmailRequest</td>
+            <td align="right" data-sort="50">
+                <span class="coverage-percent">50 %</span>
+                <span class="coverage-count">(1/2)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#FormaJuridicaEnum">src/openapi/model/empresaDto.ts</a>
+            </td>
+            <td>variable</td>
+            <td>FormaJuridicaEnum</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#RolEnum">src/openapi/model/empresaDto.ts</a>
+            </td>
+            <td>variable</td>
+            <td>RolEnum</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/typealiases.html#FormaJuridicaEnum">src/openapi/model/empresaDto.ts</a>
+            </td>
+            <td>type alias</td>
+            <td>FormaJuridicaEnum</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/typealiases.html#RolEnum">src/openapi/model/empresaDto.ts</a>
+            </td>
+            <td>type alias</td>
+            <td>RolEnum</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/FichajeEditRequestDto.html">src/openapi/model/fichajeEditRequestDto.ts</a>
+            </td>
+            <td>interface</td>
+            <td>FichajeEditRequestDto</td>
+            <td align="right" data-sort="16">
+                <span class="coverage-percent">16 %</span>
+                <span class="coverage-count">(1/6)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/FichajeRequestDto.html">src/openapi/model/fichajeRequestDto.ts</a>
+            </td>
+            <td>interface</td>
+            <td>FichajeRequestDto</td>
+            <td align="right" data-sort="20">
+                <span class="coverage-percent">20 %</span>
+                <span class="coverage-count">(1/5)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/FichajesDto.html">src/openapi/model/fichajesDto.ts</a>
+            </td>
+            <td>interface</td>
+            <td>FichajesDto</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/6)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/FormaJuridicaDto.html">src/openapi/model/formaJuridicaDto.ts</a>
+            </td>
+            <td>interface</td>
+            <td>FormaJuridicaDto</td>
+            <td align="right" data-sort="25">
+                <span class="coverage-percent">25 %</span>
+                <span class="coverage-count">(1/4)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/GeneroDto.html">src/openapi/model/generoDto.ts</a>
+            </td>
+            <td>interface</td>
+            <td>GeneroDto</td>
+            <td align="right" data-sort="25">
+                <span class="coverage-percent">25 %</span>
+                <span class="coverage-count">(1/4)</span>
+            </td>
+        </tr>
+        <tr class="medium">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/IdRequestDto.html">src/openapi/model/idRequestDto.ts</a>
+            </td>
+            <td>interface</td>
+            <td>IdRequestDto</td>
+            <td align="right" data-sort="50">
+                <span class="coverage-percent">50 %</span>
+                <span class="coverage-count">(1/2)</span>
+            </td>
+        </tr>
+        <tr class="medium">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/LoginRequest.html">src/openapi/model/loginRequest.ts</a>
+            </td>
+            <td>interface</td>
+            <td>LoginRequest</td>
+            <td align="right" data-sort="33">
+                <span class="coverage-percent">33 %</span>
+                <span class="coverage-count">(1/3)</span>
+            </td>
+        </tr>
+        <tr class="medium">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/LoginResponse.html">src/openapi/model/loginResponse.ts</a>
+            </td>
+            <td>interface</td>
+            <td>LoginResponse</td>
+            <td align="right" data-sort="50">
+                <span class="coverage-percent">50 %</span>
+                <span class="coverage-count">(1/2)</span>
+            </td>
+        </tr>
+        <tr class="medium">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/NominaMetadataDto.html">src/openapi/model/nominaMetadataDto.ts</a>
+            </td>
+            <td>interface</td>
+            <td>NominaMetadataDto</td>
+            <td align="right" data-sort="33">
+                <span class="coverage-percent">33 %</span>
+                <span class="coverage-count">(1/3)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#PermisoEnum">src/openapi/model/permisoEditarDto.ts</a>
+            </td>
+            <td>variable</td>
+            <td>PermisoEnum</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/typealiases.html#PermisoEnum">src/openapi/model/permisoEditarDto.ts</a>
+            </td>
+            <td>type alias</td>
+            <td>PermisoEnum</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#PermisoEnum">src/openapi/model/permisoSolicitarDto.ts</a>
+            </td>
+            <td>variable</td>
+            <td>PermisoEnum</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/typealiases.html#PermisoEnum">src/openapi/model/permisoSolicitarDto.ts</a>
+            </td>
+            <td>type alias</td>
+            <td>PermisoEnum</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#EstadoEnum">src/openapi/model/permisoValidarDto.ts</a>
+            </td>
+            <td>variable</td>
+            <td>EstadoEnum</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/typealiases.html#EstadoEnum">src/openapi/model/permisoValidarDto.ts</a>
+            </td>
+            <td>type alias</td>
+            <td>EstadoEnum</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#EstadoEnum">src/openapi/model/permisosDto.ts</a>
+            </td>
+            <td>variable</td>
+            <td>EstadoEnum</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#PermisoEnum">src/openapi/model/permisosDto.ts</a>
+            </td>
+            <td>variable</td>
+            <td>PermisoEnum</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/typealiases.html#EstadoEnum">src/openapi/model/permisosDto.ts</a>
+            </td>
+            <td>type alias</td>
+            <td>EstadoEnum</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/typealiases.html#PermisoEnum">src/openapi/model/permisosDto.ts</a>
+            </td>
+            <td>type alias</td>
+            <td>PermisoEnum</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/TipoPermisoDto.html">src/openapi/model/tipoPermisoDto.ts</a>
+            </td>
+            <td>interface</td>
+            <td>TipoPermisoDto</td>
+            <td align="right" data-sort="25">
+                <span class="coverage-percent">25 %</span>
+                <span class="coverage-count">(1/4)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#GeneroEnum">src/openapi/model/trabajadorDto.ts</a>
+            </td>
+            <td>variable</td>
+            <td>GeneroEnum</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#RolEnum">src/openapi/model/trabajadorDto.ts</a>
+            </td>
+            <td>variable</td>
+            <td>RolEnum</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/typealiases.html#GeneroEnum">src/openapi/model/trabajadorDto.ts</a>
+            </td>
+            <td>type alias</td>
+            <td>GeneroEnum</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/typealiases.html#RolEnum">src/openapi/model/trabajadorDto.ts</a>
+            </td>
+            <td>type alias</td>
+            <td>RolEnum</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/Param.html">src/openapi/param.ts</a>
+            </td>
+            <td>interface</td>
+            <td>Param</td>
+            <td align="right" data-sort="12">
+                <span class="coverage-percent">12 %</span>
+                <span class="coverage-count">(1/8)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/typealiases.html#DataFormat">src/openapi/param.ts</a>
+            </td>
+            <td>type alias</td>
+            <td>DataFormat</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/typealiases.html#DataType">src/openapi/param.ts</a>
+            </td>
+            <td>type alias</td>
+            <td>DataType</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/typealiases.html#ParamLocation">src/openapi/param.ts</a>
+            </td>
+            <td>type alias</td>
+            <td>ParamLocation</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/typealiases.html#ParamStyle">src/openapi/param.ts</a>
+            </td>
+            <td>type alias</td>
+            <td>ParamStyle</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/typealiases.html#StandardDataFormat">src/openapi/param.ts</a>
+            </td>
+            <td>type alias</td>
+            <td>StandardDataFormat</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/typealiases.html#StandardDataType">src/openapi/param.ts</a>
+            </td>
+            <td>type alias</td>
+            <td>StandardDataType</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/typealiases.html#StandardParamStyle">src/openapi/param.ts</a>
+            </td>
+            <td>type alias</td>
+            <td>StandardParamStyle</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#BASE_PATH">src/openapi/variables.ts</a>
+            </td>
+            <td>variable</td>
+            <td>BASE_PATH</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#COLLECTION_FORMATS">src/openapi/variables.ts</a>
+            </td>
+            <td>variable</td>
+            <td>COLLECTION_FORMATS</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<script src="js/libs/tablesort.min.js"></script>
+<script src="js/libs/tablesort.number.min.js"></script>
+<script>
+    new Tablesort(document.getElementById('coverage-table'));
+</script>
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 0;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'coverage';
+            var COMPODOC_CURRENT_PAGE_URL = 'coverage.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="./js/libs/custom-elements.min.js"></script>
+       <script src="./js/libs/lit-html.js"></script>
+
+       <script src="./js/menu-wc.js" defer></script>
+       <script nomodule src="./js/menu-wc_es5.js" defer></script>
+
+       <script src="./js/libs/bootstrap-native.js"></script>
+
+       <script src="./js/libs/es6-shim.min.js"></script>
+       <script src="./js/libs/EventDispatcher.js"></script>
+       <script src="./js/libs/promise.min.js"></script>
+
+       <script src="./js/compodoc.js"></script>
+
+       <script src="./js/tabs.js"></script>
+       <script src="./js/menu.js"></script>
+       <script src="./js/libs/clipboard.min.js"></script>
+       <script src="./js/libs/prism.js"></script>
+       <script src="./js/sourceCode.js"></script>
+          <script src="./js/search/search.js"></script>
+          <script src="./js/search/lunr.min.js"></script>
+          <script src="./js/search/search-lunr.js"></script>
+          <script src="./js/search/search_index.js"></script>
+       <script src="./js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

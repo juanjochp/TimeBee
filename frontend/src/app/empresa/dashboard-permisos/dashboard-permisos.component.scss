@@ -1,0 +1,36 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.tabla-scroll-wrapper {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  position: relative;
+}
+
+table th {
+  font-size: small;
+}
+table td {
+  font-size: small;
+}
+table td button {
+  padding: 2px;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+
+/* Para evitar que se vea el scrollbar en algunos navegadores */
+.tabla-scroll-wrapper::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+
+
+
+
+
