@@ -335,7 +335,7 @@ private applyFilter() {
         min:0.25,
         max:8,
         step: 0.25,
-        placeholder:'0.25 - 8'
+        placeholder:'0.25h - 8h'
       },
       validation: {
         messages: {
