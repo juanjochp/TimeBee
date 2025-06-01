@@ -1,7 +1,3 @@
--- CONTRASEÑA ENCRIPTADA PARA '1234' CON BCrypt
--- $2a$10$Dow1P.N/PaE3uQIQZxW6VewjAjj6U9GKY9vCD7QTCQUn2cdhBSs/C
-
--- Insert 1: Empresa tipo SL
 INSERT INTO EMPRESA (
     NOMBRE, FORMA_JURIDICA, CIF, DIRECCION, TELEFONO, EMAIL, PASSWORD, ROL, ACTIVO
 ) VALUES (
@@ -11,7 +7,6 @@ INSERT INTO EMPRESA (
     'EMPRESA', TRUE
 );
 
--- Insert 2: Empresa tipo Autónomo
 INSERT INTO EMPRESA (
     NOMBRE, FORMA_JURIDICA, CIF, DIRECCION, TELEFONO, EMAIL, PASSWORD, ROL, ACTIVO
 ) VALUES (
@@ -84,9 +79,6 @@ INSERT INTO nomina (
   ('2025-04-01', 1, '2025-04-10 09:00:00', 110000, 2, 'application/pdf', 'nomina_abril_2025.pdf', x'00'),
   ('2025-05-01', 1, '2025-05-10 09:00:00', 105432, 2, 'application/pdf', 'nomina_mayo_2025.pdf', x'00');
 
-
--- FICHAJES
-
 INSERT INTO fichaje (empresa_id, trabajador_id, fecha_inicio, fecha_fin) VALUES
 (1, 1, '2024-01-16 08:30:00', '2024-01-16 13:15:00'),
 (1, 1, '2024-01-16 14:15:00', '2024-01-16 17:45:00'),
@@ -95,7 +87,6 @@ INSERT INTO fichaje (empresa_id, trabajador_id, fecha_inicio, fecha_fin) VALUES
 (1, 2, '2024-02-01 14:00:00', '2024-02-01 18:20:00'),
 (1, 2, '2024-02-02 09:30:00', '2024-02-02 19:45:00');
 
--- Inserta 20 fichajes para el trabajador_id = 2 y empresa_id = 1
 INSERT INTO fichaje (empresa_id, fecha_inicio, fecha_fin, trabajador_id)
 VALUES
   (1, '2025-04-01 09:00:00', '2025-04-01 17:00:00', 2),
