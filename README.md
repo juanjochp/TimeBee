@@ -60,8 +60,7 @@ Todo conectado. Todo sincronizado.
 ¡Y listo! Abre tu navegador en http://localhost:4200 y empieza a explorar.
 
 ## Licencia
-Este proyecto está protegido bajo licencia CC BY-ND 4.0.  
-Por favor, consulta el archivo LICENSE para más detalles.
+Este proyecto es de código cerrado. No está permitido copiar, distribuir, modificar ni utilizar el código fuente sin permiso explícito del autor.
 
 ## Contacto
 ¿Tienes dudas, ideas o simplemente quieres saludar?
